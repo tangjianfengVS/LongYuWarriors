@@ -7,24 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E0D669120ADC89800726F4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D669020ADC89800726F4D /* AppDelegate.swift */; };
+		165514E8A9D42F8A561DF43F /* Pods_LongYuWarriors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5DD7E5EF182B7FB8338D96 /* Pods_LongYuWarriors.framework */; };
+		7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0828E820B1AEAC0070070D /* AppDelegate.swift */; };
+		7E0828EC20B1AEEF0070070D /* LYWarriorsRootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */; };
+		7E0828ED20B1AEEF0070070D /* LYWarriorsRootMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */; };
 		7E0D669320ADC89800726F4D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669220ADC89800726F4D /* GameScene.sks */; };
 		7E0D669520ADC89800726F4D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669420ADC89800726F4D /* Actions.sks */; };
 		7E0D669720ADC89800726F4D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D669620ADC89800726F4D /* GameScene.swift */; };
 		7E0D669920ADC89800726F4D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D669820ADC89800726F4D /* GameViewController.swift */; };
-		7E0D669C20ADC89800726F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669A20ADC89800726F4D /* Main.storyboard */; };
 		7E0D669E20ADC89900726F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669D20ADC89900726F4D /* Assets.xcassets */; };
 		7E0D66A120ADC89900726F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669F20ADC89900726F4D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C5DD7E5EF182B7FB8338D96 /* Pods_LongYuWarriors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LongYuWarriors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3A2B316BAFF43626501CF7 /* Pods-LongYuWarriors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongYuWarriors.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors.release.xcconfig"; sourceTree = "<group>"; };
+		41A497B5211455F2A1D9635E /* Pods-LongYuWarriors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongYuWarriors.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors.debug.xcconfig"; sourceTree = "<group>"; };
+		7E0828E820B1AEAC0070070D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsRootMainVC.swift; sourceTree = "<group>"; };
+		7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsRootMainVC.xib; sourceTree = "<group>"; };
 		7E0D668D20ADC89800726F4D /* LongYuWarriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LongYuWarriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E0D669020ADC89800726F4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E0D669220ADC89800726F4D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		7E0D669420ADC89800726F4D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		7E0D669620ADC89800726F4D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		7E0D669820ADC89800726F4D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		7E0D669B20ADC89800726F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E0D669D20ADC89900726F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E0D66A020ADC89900726F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E0D66A220ADC89900726F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165514E8A9D42F8A561DF43F /* Pods_LongYuWarriors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0828E720B1AE3D0070070D /* RootMain */ = {
+			isa = PBXGroup;
+			children = (
+				7E0828E820B1AEAC0070070D /* AppDelegate.swift */,
+				7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */,
+				7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */,
+			);
+			path = RootMain;
+			sourceTree = "<group>";
+		};
 		7E0D668420ADC89800726F4D = {
 			isa = PBXGroup;
 			children = (
 				7E0D668F20ADC89800726F4D /* LongYuWarriors */,
 				7E0D668E20ADC89800726F4D /* Products */,
+				95A532715A67715D0E53EF07 /* Pods */,
+				E496053C5BD2A6162D91685A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +79,33 @@
 		7E0D668F20ADC89800726F4D /* LongYuWarriors */ = {
 			isa = PBXGroup;
 			children = (
-				7E0D669020ADC89800726F4D /* AppDelegate.swift */,
+				7E0828E720B1AE3D0070070D /* RootMain */,
 				7E0D669220ADC89800726F4D /* GameScene.sks */,
 				7E0D669420ADC89800726F4D /* Actions.sks */,
 				7E0D669620ADC89800726F4D /* GameScene.swift */,
 				7E0D669820ADC89800726F4D /* GameViewController.swift */,
-				7E0D669A20ADC89800726F4D /* Main.storyboard */,
 				7E0D669D20ADC89900726F4D /* Assets.xcassets */,
 				7E0D669F20ADC89900726F4D /* LaunchScreen.storyboard */,
 				7E0D66A220ADC89900726F4D /* Info.plist */,
 			);
 			path = LongYuWarriors;
+			sourceTree = "<group>";
+		};
+		95A532715A67715D0E53EF07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41A497B5211455F2A1D9635E /* Pods-LongYuWarriors.debug.xcconfig */,
+				3C3A2B316BAFF43626501CF7 /* Pods-LongYuWarriors.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E496053C5BD2A6162D91685A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C5DD7E5EF182B7FB8338D96 /* Pods_LongYuWarriors.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E0D66A520ADC89900726F4D /* Build configuration list for PBXNativeTarget "LongYuWarriors" */;
 			buildPhases = (
+				14B7F35F2DAB189569144FD9 /* [CP] Check Pods Manifest.lock */,
 				7E0D668920ADC89800726F4D /* Sources */,
 				7E0D668A20ADC89800726F4D /* Frameworks */,
 				7E0D668B20ADC89800726F4D /* Resources */,
+				440079C936BFE61044292B90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,7 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0D669C20ADC89800726F4D /* Main.storyboard in Resources */,
+				7E0828ED20B1AEEF0070070D /* LYWarriorsRootMainVC.xib in Resources */,
 				7E0D669320ADC89800726F4D /* GameScene.sks in Resources */,
 				7E0D669E20ADC89900726F4D /* Assets.xcassets in Resources */,
 				7E0D66A120ADC89900726F4D /* LaunchScreen.storyboard in Resources */,
@@ -141,28 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14B7F35F2DAB189569144FD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LongYuWarriors-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		440079C936BFE61044292B90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E0D668920ADC89800726F4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */,
+				7E0828EC20B1AEEF0070070D /* LYWarriorsRootMainVC.swift in Sources */,
 				7E0D669720ADC89800726F4D /* GameScene.swift in Sources */,
 				7E0D669920ADC89800726F4D /* GameViewController.swift in Sources */,
-				7E0D669120ADC89800726F4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7E0D669A20ADC89800726F4D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E0D669B20ADC89800726F4D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7E0D669F20ADC89900726F4D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,10 +359,12 @@
 		};
 		7E0D66A620ADC89900726F4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A497B5211455F2A1D9635E /* Pods-LongYuWarriors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LongYuWarriors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,16 +372,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AllOverTheSkyStar.LongYuWarriors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		7E0D66A720ADC89900726F4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C3A2B316BAFF43626501CF7 /* Pods-LongYuWarriors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LongYuWarriors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AllOverTheSkyStar.LongYuWarriors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

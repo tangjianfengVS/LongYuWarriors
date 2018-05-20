@@ -1,0 +1,6 @@
+framework module Pods_LongYuWarriors {
+  umbrella header "Pods-LongYuWarriors-umbrella.h"
+
+  export *
+  module * { export * }
+}
