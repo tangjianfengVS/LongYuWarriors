@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		165514E8A9D42F8A561DF43F /* Pods_LongYuWarriors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5DD7E5EF182B7FB8338D96 /* Pods_LongYuWarriors.framework */; };
 		7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0828E820B1AEAC0070070D /* AppDelegate.swift */; };
-		7E0828EC20B1AEEF0070070D /* LYWarriorsRootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */; };
-		7E0828ED20B1AEEF0070070D /* LYWarriorsRootMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */; };
+		7E08293020B1B4230070070D /* LYWarriorsRootMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E08292E20B1B4230070070D /* LYWarriorsRootMainVC.xib */; };
+		7E08293120B1B4230070070D /* LYWarriorsRootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08292F20B1B4230070070D /* LYWarriorsRootMainVC.swift */; };
+		7E08293520B1B4780070070D /* LYWarriorsInterfaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08293320B1B4780070070D /* LYWarriorsInterfaceCell.swift */; };
+		7E08293620B1B4780070070D /* LYWarriorsInterfaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E08293420B1B4780070070D /* LYWarriorsInterfaceCell.xib */; };
 		7E0D669320ADC89800726F4D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669220ADC89800726F4D /* GameScene.sks */; };
 		7E0D669520ADC89800726F4D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D669420ADC89800726F4D /* Actions.sks */; };
 		7E0D669720ADC89800726F4D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D669620ADC89800726F4D /* GameScene.swift */; };
@@ -24,8 +26,10 @@
 		3C3A2B316BAFF43626501CF7 /* Pods-LongYuWarriors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongYuWarriors.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors.release.xcconfig"; sourceTree = "<group>"; };
 		41A497B5211455F2A1D9635E /* Pods-LongYuWarriors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongYuWarriors.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors.debug.xcconfig"; sourceTree = "<group>"; };
 		7E0828E820B1AEAC0070070D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsRootMainVC.swift; sourceTree = "<group>"; };
-		7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsRootMainVC.xib; sourceTree = "<group>"; };
+		7E08292E20B1B4230070070D /* LYWarriorsRootMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYWarriorsRootMainVC.xib; sourceTree = "<group>"; };
+		7E08292F20B1B4230070070D /* LYWarriorsRootMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYWarriorsRootMainVC.swift; sourceTree = "<group>"; };
+		7E08293320B1B4780070070D /* LYWarriorsInterfaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsInterfaceCell.swift; sourceTree = "<group>"; };
+		7E08293420B1B4780070070D /* LYWarriorsInterfaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsInterfaceCell.xib; sourceTree = "<group>"; };
 		7E0D668D20ADC89800726F4D /* LongYuWarriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LongYuWarriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0D669220ADC89800726F4D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		7E0D669420ADC89800726F4D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -52,10 +56,28 @@
 			isa = PBXGroup;
 			children = (
 				7E0828E820B1AEAC0070070D /* AppDelegate.swift */,
-				7E0828EA20B1AEEF0070070D /* LYWarriorsRootMainVC.swift */,
-				7E0828EB20B1AEEF0070070D /* LYWarriorsRootMainVC.xib */,
+				7E08292D20B1B4230070070D /* VC */,
+				7E08293220B1B4380070070D /* VI */,
 			);
 			path = RootMain;
+			sourceTree = "<group>";
+		};
+		7E08292D20B1B4230070070D /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7E08292E20B1B4230070070D /* LYWarriorsRootMainVC.xib */,
+				7E08292F20B1B4230070070D /* LYWarriorsRootMainVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		7E08293220B1B4380070070D /* VI */ = {
+			isa = PBXGroup;
+			children = (
+				7E08293320B1B4780070070D /* LYWarriorsInterfaceCell.swift */,
+				7E08293420B1B4780070070D /* LYWarriorsInterfaceCell.xib */,
+			);
+			path = VI;
 			sourceTree = "<group>";
 		};
 		7E0D668420ADC89800726F4D = {
@@ -168,9 +190,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0828ED20B1AEEF0070070D /* LYWarriorsRootMainVC.xib in Resources */,
+				7E08293020B1B4230070070D /* LYWarriorsRootMainVC.xib in Resources */,
 				7E0D669320ADC89800726F4D /* GameScene.sks in Resources */,
 				7E0D669E20ADC89900726F4D /* Assets.xcassets in Resources */,
+				7E08293620B1B4780070070D /* LYWarriorsInterfaceCell.xib in Resources */,
 				7E0D66A120ADC89900726F4D /* LaunchScreen.storyboard in Resources */,
 				7E0D669520ADC89800726F4D /* Actions.sks in Resources */,
 			);
@@ -222,10 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E08293120B1B4230070070D /* LYWarriorsRootMainVC.swift in Sources */,
 				7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */,
-				7E0828EC20B1AEEF0070070D /* LYWarriorsRootMainVC.swift in Sources */,
 				7E0D669720ADC89800726F4D /* GameScene.swift in Sources */,
 				7E0D669920ADC89800726F4D /* GameViewController.swift in Sources */,
+				7E08293520B1B4780070070D /* LYWarriorsInterfaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

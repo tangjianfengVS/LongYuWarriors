@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LYWarriorsInterfaceCell" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="133" height="182"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="133" height="182"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-Oi-c8U">
+                        <rect key="frame" x="0.0" y="0.0" width="133" height="182"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剑道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck3-Bx-j9i">
+                        <rect key="frame" x="51" y="159" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WKg-Oi-c8U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="15Y-nV-YZx"/>
+                <constraint firstAttribute="bottom" secondItem="Ck3-Bx-j9i" secondAttribute="bottom" constant="5" id="3Hw-GN-JY6"/>
+                <constraint firstAttribute="bottom" secondItem="WKg-Oi-c8U" secondAttribute="bottom" id="kBL-HI-FrL"/>
+                <constraint firstItem="Ck3-Bx-j9i" firstAttribute="centerX" secondItem="WKg-Oi-c8U" secondAttribute="centerX" id="o1n-s8-muB"/>
+                <constraint firstAttribute="trailing" secondItem="WKg-Oi-c8U" secondAttribute="trailing" id="sgm-mW-ZC9"/>
+                <constraint firstItem="WKg-Oi-c8U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x4t-gt-xuE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="133" height="182"/>
+            <point key="canvasLocation" x="75.5" y="25"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bg" width="640" height="960"/>
+    </resources>
+</document>
