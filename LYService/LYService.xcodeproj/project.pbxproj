@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7E08291220B1B0F80070070D /* LYService.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E08291020B1B0F80070070D /* LYService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E08293B20B1B8F10070070D /* LYProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08293A20B1B8F10070070D /* LYProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E08290D20B1B0F80070070D /* LYService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E08291020B1B0F80070070D /* LYService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYService.h; sourceTree = "<group>"; };
 		7E08291120B1B0F80070070D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E08293A20B1B8F10070070D /* LYProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		7E08290F20B1B0F80070070D /* LYService */ = {
 			isa = PBXGroup;
 			children = (
+				7E08293A20B1B8F10070070D /* LYProtocol.swift */,
 				7E08291020B1B0F80070070D /* LYService.h */,
 				7E08291120B1B0F80070070D /* Info.plist */,
 			);
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					7E08290C20B1B0F80070070D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E08293B20B1B8F10070070D /* LYProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +264,7 @@
 		7E08291620B1B0F80070070D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -275,6 +281,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AllOverTheSkyStar.LYService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -283,6 +290,7 @@
 		7E08291720B1B0F80070070D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
