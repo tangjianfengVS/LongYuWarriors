@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LYWarriorsSkillFuncView" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="oVB-ht-FPj">
+                    <rect key="frame" x="3" y="31" width="317" height="42"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-mP-dqR" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="gXd-nO-Vfn"/>
+                                <constraint firstAttribute="width" constant="42" id="zjX-S4-lM2"/>
+                            </constraints>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fa8-vD-MzK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBU-Ys-vdK" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="46" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="3IX-Bl-kbf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfS-F4-5GF" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="91.5" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hId-Ek-o2R"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-lR-oen" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="137.5" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xHB-JI-08a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifp-gx-Ydc" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="183.5" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="8T1-kl-BQT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VW-fx-PLE" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="229" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="9xx-ti-qu3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-4P-aPr" customClass="LYWarriorsSkillButton" customModule="LongYuWarriors" customModuleProvider="target">
+                            <rect key="frame" x="275" y="0.0" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="disabled" backgroundImage="默认技能空栏位背景"/>
+                            <connections>
+                                <action selector="clickSkillFuncBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qfm-Sm-3Yx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="kBU-Ys-vdK" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="2Le-2F-7nf"/>
+                        <constraint firstItem="cfS-F4-5GF" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="FfD-kH-DmY"/>
+                        <constraint firstItem="pcv-lR-oen" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="Fs2-ba-75h"/>
+                        <constraint firstItem="9VW-fx-PLE" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="L3b-eM-iGg"/>
+                        <constraint firstItem="cfS-F4-5GF" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="R4t-xh-ksb"/>
+                        <constraint firstItem="Ifp-gx-Ydc" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="Ybz-I2-Wkh"/>
+                        <constraint firstItem="NT3-4P-aPr" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="dKO-WO-u7c"/>
+                        <constraint firstItem="kBU-Ys-vdK" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="eWJ-Ge-HdE"/>
+                        <constraint firstItem="9VW-fx-PLE" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="mt9-H8-Frb"/>
+                        <constraint firstItem="NT3-4P-aPr" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="q3P-OY-nsJ"/>
+                        <constraint firstItem="pcv-lR-oen" firstAttribute="height" secondItem="qRr-mP-dqR" secondAttribute="height" id="qZi-nS-Z6n"/>
+                        <constraint firstItem="Ifp-gx-Ydc" firstAttribute="width" secondItem="qRr-mP-dqR" secondAttribute="width" id="y5Z-Qd-N7g"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oVB-ht-FPj" secondAttribute="trailing" constant="3" id="4og-kZ-2il"/>
+                <constraint firstItem="oVB-ht-FPj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="68s-0O-ZCT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oVB-ht-FPj" secondAttribute="bottom" constant="3" id="kzi-eh-6Eu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="stackView" destination="oVB-ht-FPj" id="bRB-oc-CZw"/>
+            </connections>
+            <point key="canvasLocation" x="7.5" y="151"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="默认技能空栏位背景" width="106" height="106"/>
+    </resources>
+</document>

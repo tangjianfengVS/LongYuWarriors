@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67993248BD926F3D1422E42A /* Pods_LYService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778E96210E9838E7F7F37EF7 /* Pods_LYService.framework */; };
 		7E08291220B1B0F80070070D /* LYService.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E08291020B1B0F80070070D /* LYService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E08293B20B1B8F10070070D /* LYProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08293A20B1B8F10070070D /* LYProtocol.swift */; };
+		7E0BE49C20CD3E4B009952CF /* LYServiceSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BE49B20CD3E4B009952CF /* LYServiceSessionManager.swift */; };
+		7E0BE49E20CD3EBF009952CF /* LYServiceNegotiateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BE49D20CD3EBF009952CF /* LYServiceNegotiateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341E20FE0012E31202FBEB5E /* Pods-LYService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYService.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LYService/Pods-LYService.debug.xcconfig"; sourceTree = "<group>"; };
+		778E96210E9838E7F7F37EF7 /* Pods_LYService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E08290D20B1B0F80070070D /* LYService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E08291020B1B0F80070070D /* LYService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYService.h; sourceTree = "<group>"; };
 		7E08291120B1B0F80070070D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E08293A20B1B8F10070070D /* LYProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYProtocol.swift; sourceTree = "<group>"; };
+		7E0BE49B20CD3E4B009952CF /* LYServiceSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYServiceSessionManager.swift; sourceTree = "<group>"; };
+		7E0BE49D20CD3EBF009952CF /* LYServiceNegotiateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYServiceNegotiateManager.swift; sourceTree = "<group>"; };
+		CCA7C78A563F801A5ACA6FFC /* Pods-LYService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYService.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LYService/Pods-LYService.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67993248BD926F3D1422E42A /* Pods_LYService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +43,8 @@
 			children = (
 				7E08290F20B1B0F80070070D /* LYService */,
 				7E08290E20B1B0F80070070D /* Products */,
+				E88B22548F5B30F059262459 /* Pods */,
+				82B1839313949829FC4BACBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,11 +59,38 @@
 		7E08290F20B1B0F80070070D /* LYService */ = {
 			isa = PBXGroup;
 			children = (
+				7E0BE49A20CD3DFE009952CF /* Session */,
 				7E08293A20B1B8F10070070D /* LYProtocol.swift */,
 				7E08291020B1B0F80070070D /* LYService.h */,
 				7E08291120B1B0F80070070D /* Info.plist */,
 			);
 			path = LYService;
+			sourceTree = "<group>";
+		};
+		7E0BE49A20CD3DFE009952CF /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				7E0BE49B20CD3E4B009952CF /* LYServiceSessionManager.swift */,
+				7E0BE49D20CD3EBF009952CF /* LYServiceNegotiateManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		82B1839313949829FC4BACBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				778E96210E9838E7F7F37EF7 /* Pods_LYService.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E88B22548F5B30F059262459 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				341E20FE0012E31202FBEB5E /* Pods-LYService.debug.xcconfig */,
+				CCA7C78A563F801A5ACA6FFC /* Pods-LYService.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,6 +111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E08291520B1B0F80070070D /* Build configuration list for PBXNativeTarget "LYService" */;
 			buildPhases = (
+				E80779365CA5FC1B0D26BC62 /* [CP] Check Pods Manifest.lock */,
 				7E08290820B1B0F80070070D /* Sources */,
 				7E08290920B1B0F80070070D /* Frameworks */,
 				7E08290A20B1B0F80070070D /* Headers */,
@@ -129,12 +168,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E80779365CA5FC1B0D26BC62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E08290820B1B0F80070070D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0BE49E20CD3EBF009952CF /* LYServiceNegotiateManager.swift in Sources */,
 				7E08293B20B1B8F10070070D /* LYProtocol.swift in Sources */,
+				7E0BE49C20CD3E4B009952CF /* LYServiceSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +325,7 @@
 		};
 		7E08291620B1B0F80070070D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 341E20FE0012E31202FBEB5E /* Pods-LYService.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -289,6 +352,7 @@
 		};
 		7E08291720B1B0F80070070D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCA7C78A563F801A5ACA6FFC /* Pods-LYService.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";

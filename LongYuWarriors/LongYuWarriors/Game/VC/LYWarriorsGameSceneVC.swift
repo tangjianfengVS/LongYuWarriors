@@ -7,29 +7,53 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 class LYWarriorsGameSceneVC: UIViewController {
+    private(set) lazy var scene: LYWarriorsScene = {
+        let scenes = LYWarriorsScene.init(size: UIScreen.main.bounds.size)
+        scenes.scaleMode = .resizeFill
+        return scenes
+    }()
+    
+    private(set) lazy var skillFunc: LYWarriorsSkillFuncView = {
+        let skill = LYWarriorsSkillFuncView.shared
+        skill.clouse = {[weak self] (type) in
+            print(type)
+            
+            
+            
+        }
+        return skill
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let skView = view as? SKView {
+            skView.presentScene(scene)
+            //skView.showsFPS = true
+            //skView.showsNodeCount = true
+        }
+        setupUI()
+    }
+    
+    private func setupUI(){
+        view.addSubview(skillFunc)
+        skillFunc.snp.makeConstraints { (make) in
+            make.left.right.equalTo(view)
+            make.height.equalTo(SkillFuncViewHeight)
+            make.top.equalTo(view).offset(0)
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

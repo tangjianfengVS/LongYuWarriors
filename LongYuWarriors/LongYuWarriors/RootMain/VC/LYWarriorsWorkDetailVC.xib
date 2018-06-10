@@ -22,7 +22,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXh-Jg-Q1v">
                     <rect key="frame" x="25" y="612" width="325" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="LFH-Zn-waZ"/>
                     </constraints>
@@ -34,12 +34,28 @@
                         <action selector="clickBeginGameBtn:" destination="-1" eventType="touchUpInside" id="b4R-pn-9jF"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIW-Ur-kgP">
+                    <rect key="frame" x="305" y="50" width="55" height="27"/>
+                    <color key="backgroundColor" red="0.31746450399999998" green="0.53663048820000003" blue="0.92825983499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="Lgo-iI-mXZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="蓝牙对战">
+                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clickBluetoothFuncBtn:" destination="-1" eventType="touchUpInside" id="WEb-eH-c35"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="0.53600365959999996" green="0.84150961270000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="IXh-Jg-Q1v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="0L6-hc-SHA"/>
                 <constraint firstItem="IXh-Jg-Q1v" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="BS7-sE-0Ip"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IIW-Ur-kgP" secondAttribute="trailing" constant="15" id="F3v-U6-96g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IXh-Jg-Q1v" secondAttribute="trailing" constant="25" id="PMc-ep-yyP"/>
+                <constraint firstItem="IIW-Ur-kgP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="bYX-oZ-rtD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IXh-Jg-Q1v" secondAttribute="bottom" constant="15" id="djP-XZ-4Do"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

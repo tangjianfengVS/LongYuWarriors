@@ -12,7 +12,7 @@ class LYWarriorsInterfaceCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 0.8
     }
-
 }

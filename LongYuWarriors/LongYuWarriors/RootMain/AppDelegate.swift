@@ -8,6 +8,8 @@
 
 import UIKit
 
+let LYWarriorsUpdateRootNotif = "LYWarriorsGameSceneVCNotification"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = LYWarriorsRootMainVC()
         window?.makeKeyAndVisible()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneUpdateRootNotification), name:NSNotification.Name(rawValue: LYWarriorsUpdateRootNotif), object: nil)
         return true
+    }
+    
+    @objc func sceneUpdateRootNotification(noti: Notification) {
+        if let VC = noti.object as? LYWarriorsGameSceneVC{
+            window?.rootViewController = VC
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

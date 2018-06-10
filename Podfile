@@ -8,5 +8,9 @@ project 'LongYuWarriors/LongYuWarriors.xcodeproj'
 target 'LongYuWarriors' do
   project 'LongYuWarriors/LongYuWarriors.xcodeproj'
   pod 'SnapKit'
+  pod 'SVProgressHUD'
 end
 
+target 'LYService' do
+  project 'LYService/LYService.xcodeproj'
+end

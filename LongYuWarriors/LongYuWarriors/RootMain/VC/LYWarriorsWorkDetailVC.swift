@@ -17,12 +17,21 @@ class LYWarriorsWorkDetailVC: UIViewController {
     }
     
     @IBAction func clickBeginGameBtn(_ sender: UIButton) {
-        let VC = LYWarriorsGameSceneVC()
-        UIApplication.shared.keyWindow?.rootViewController = VC
+        present(LYWarriorsGameSceneVC(), animated: true, completion: nil)
+    }
+    
+    @IBAction func clickBluetoothFuncBtn(_ sender: UIButton) {
+        LYWarriorsBluetoothVC.beginSearch(VC: self) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    deinit {
+        print("释放")
     }
 }
