@@ -16,6 +16,13 @@ protocol LYWarriorsJoystickProtocol {
     func joystickCanceled(Joystick: LYWarriorsJoystick,touches: Set<UITouch>,event: UIEvent);
 }
 
+enum MasterLocationType: NSInteger {
+    case centre=1
+    case bicyclic=2
+    case tricyclic=3
+    case tetracycline=4
+}
+
 class LYWarriorsJoystick: SKSpriteNode{
     private(set) var thumbnName: String!
     private(set) var backdropName: String!

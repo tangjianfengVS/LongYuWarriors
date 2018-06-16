@@ -27,6 +27,8 @@ class LYWarriorsRole: SKSpriteNode {
     
     private(set) var medalGrade: NSNumber=0                    //勋章等级
     private(set) var honorName: String=""                      //称号
+    var locational: CGRect = .zero
+    var locationType: MasterLocationType = .bicyclic
     
     private let idleFarams: [SKTexture]={
         let textureAtlas = SKTextureAtlas(named: "Goblin_Idle")
