@@ -17,7 +17,7 @@ class LYWarriorsSkillFuncView: UIView {
         view.backgroundColor = UIColor.clear
         
         if let btn = view.stackView.subviews.first as? LYWarriorsSkillButton{
-            btn.skillFunc = .A
+            btn.skillFunc = .raiseType
         }
         return view
     }()

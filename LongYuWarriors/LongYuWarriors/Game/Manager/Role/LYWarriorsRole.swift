@@ -10,8 +10,10 @@ import SpriteKit
 import UIKit
 
 class LYWarriorsRole: SKSpriteNode {
+    private var walkSize: CGSize = .zero
+    
     static let shared: LYWarriorsRole={
-        let texture = SKTexture(imageNamed: "goblin_idle_0001")
+        let texture = SKTexture(imageNamed: "new_stop_0001")//"goblin_idle_0001")
         let role = LYWarriorsRole(texture: texture)
         return role
     }()
@@ -24,41 +26,67 @@ class LYWarriorsRole: SKSpriteNode {
     private(set) var userName: String=""                       //名称
     private(set) var skillFuncList: [Any] = []                 //技能集合
                                                                //技能设置（快捷键）
-    
     private(set) var medalGrade: NSNumber=0                    //勋章等级
     private(set) var honorName: String=""                      //称号
     var locational: CGRect = .zero
-    var locationType: MasterLocationType = .bicyclic
+    var direction: Bool = true{                                //方向
+        didSet{
+            let rotate = SKAction.rotate(byAngle: direction ? CGFloat(Double.pi) : CGFloat(-Double.pi), duration: 1)
+            let repeatAction = SKAction.repeat(rotate, count: 1)
+            run(repeatAction, withKey: "rotate")
+        }
+    }
     
     private let idleFarams: [SKTexture]={
-        let textureAtlas = SKTextureAtlas(named: "Goblin_Idle")
+        let textureAtlas = SKTextureAtlas(named: "New_stop")
         var rray: [SKTexture] = []
         for i in 1..<textureAtlas.textureNames.count{
-            let texture = textureAtlas.textureNamed(String(format:"goblin_idle_%04zd",i))
+            let texture = textureAtlas.textureNamed(String(format:"new_stop_%04zd",i))
             rray.append(texture)
         }
         return rray
     }()
     
     private let walkFarams: [SKTexture]={
-        let textureAtlas = SKTextureAtlas(named: "Goblin_Walk")
+        let textureAtlas = SKTextureAtlas(named: "New_run")//Goblin_Walk
         var rray: [SKTexture] = []
         for i in 1..<textureAtlas.textureNames.count{
-            let texture = textureAtlas.textureNamed(String(format:"goblin_walk_%04zd",i))
+            let texture = textureAtlas.textureNamed(String(format:"new_run_%04zd",i))//goblin_walk
+            rray.append(texture)
+        }
+        return rray
+    }()
+    
+    private let raiseFarams: [SKTexture]={
+        let textureAtlas = SKTextureAtlas(named: "New_raise")
+        var rray: [SKTexture] = []
+        for i in 1..<textureAtlas.textureNames.count{
+            let texture = textureAtlas.textureNamed(String(format:"new_raise_%04zd",i))
             rray.append(texture)
         }
         return rray
     }()
     
     func idle() {
-        let run = SKAction.animate(with: idleFarams, timePerFrame: 0.05)
+        size = SKTexture(imageNamed: "new_stop_0001").size()
+        let run = SKAction.animate(with: idleFarams, timePerFrame: 0.1)
         let repeatForeverRun = SKAction.repeatForever(run)
         self.run(repeatForeverRun)
     }
     
     func walk() {
-        let run = SKAction.animate(with: walkFarams, timePerFrame: 0.05)
+        size = SKTexture(imageNamed: "new_run_0001").size()
+        let run = SKAction.animate(with: walkFarams, timePerFrame: 0.10)
         let repeatForeverRun = SKAction.repeatForever(run)
         self.run(repeatForeverRun)
+    }
+    
+    func raise() {
+        size = SKTexture(imageNamed: "new_raise_0001").size()
+        let run = SKAction.animate(with: raiseFarams, timePerFrame: 0.1)
+        let repeatForeverRun = SKAction.repeat(run, count: 1)
+        self.run(repeatForeverRun) {
+            self.size = SKTexture(imageNamed: "new_stop_0001").size()
+        }
     }
 }

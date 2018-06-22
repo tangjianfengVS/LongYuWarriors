@@ -11,25 +11,19 @@ import SpriteKit
 import GameplayKit
 
 class LYWarriorsGameSceneVC: UIViewController {
-    
-    /*
-     *  场景
-     *
-     */
+    //MARK : 场景
     private(set) lazy var scene: LYWarriorsScene = {
         let scenes = LYWarriorsScene.init(size: UIScreen.main.bounds.size)
         scenes.scaleMode = .aspectFill
         return scenes
     }()
-    
-    /*
-     *    技能
-     *
-     */
+    //MARK : 技能
     private(set) lazy var skillFunc: LYWarriorsSkillFuncView = {
         let skill = LYWarriorsSkillFuncView.shared
         skill.clouse = {[weak self] (type) in
-            print(type)
+            if type == .raiseType{
+                self?.scene.monster.raise()
+            }
         }
         return skill
     }()

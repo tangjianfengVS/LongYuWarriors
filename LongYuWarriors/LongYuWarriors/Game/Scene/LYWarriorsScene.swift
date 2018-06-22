@@ -10,13 +10,10 @@ import SpriteKit
 import GameplayKit
 
 class LYWarriorsScene: SKScene {
-    /*
-     *   人物
-     */
-    private lazy var monster: LYWarriorsRole = LYWarriorsRole.shared
-    /*
-     *   摇杆
-     */
+    //MARK : 人物
+    private(set) lazy var monster: LYWarriorsRole = LYWarriorsRole.shared
+    //MARK : 摇杆
+    private var isJoystickTouchEnded: Bool=true
     private lazy var Joystick: LYWarriorsJoystick = {
         let tool = LYWarriorsJoystick(backdropNames: "dpad", thumbnNames: "joystick",
                                      thumbSizes: CGSize(width: 55, height: 55),
@@ -24,33 +21,19 @@ class LYWarriorsScene: SKScene {
         tool.delegate = self
         return tool
     }()
-    /*
-     *  背景
-     */
-    private lazy var backgroundNode = SKSpriteNode(imageNamed: "Snip20180610_3")
-    /*
-     *  运动范围
-     */
+    //MARK : 背景
+    private lazy var backgroundNode: SKSpriteNode = {
+        let node = SKSpriteNode(imageNamed: "Snip20180610_3")
+        node.size = CGSize(width: 400, height: 950)
+        return node
+    }()
+    //MARK : 运动范围
     private lazy var monsterCenterRect: CGRect={
         let centerSize = CGSize(width: 200, height: 200)
         let offsetX = (self.backgroundNode.frame.height-centerSize.width)/2
         let offsetY = (self.backgroundNode.frame.width-centerSize.height)/2
         return CGRect(x: offsetY, y: offsetX, width: centerSize.width, height: centerSize.height)
     }()
-//    /*
-//     *  背景运动范围
-//     */
-//    private lazy var backgroundCenterRect: CGRect={
-//        let centerSize = CGSize(width: 50,height: 80)
-//        let offsetX = (size.width - centerSize.width) / 2
-//        let offsetY = (size.height - centerSize.height) / 2
-//        return CGRect(x: offsetX, y: offsetY, width: centerSize.width, height: centerSize.height)
-//    }()
-//    /*
-//     *  边距离
-//     */
-//    private lazy var marginSize = CGSize(width: 50, height: 80)
-    private var isJoystickTouchEnded: Bool=true
     
     override func sceneDidLoad() {
         isUserInteractionEnabled = true
@@ -58,7 +41,7 @@ class LYWarriorsScene: SKScene {
         backgroundNode.addChild(monster)
         addChild(Joystick)
         backgroundNode.position = CGPoint(x: size.width/2, y: size.height/2)
-        monster.position = CGPoint(x: 0, y: -(size.height-monster.size.height)/2)
+        monster.position = CGPoint(x: size.width/2, y: monster.size.height)
         Joystick.position = CGPoint(x: frame.maxX - Joystick.size.width/2 - 10, y: Joystick.size.width/2 + 10)
     }
     
@@ -68,12 +51,9 @@ class LYWarriorsScene: SKScene {
      *
      */
     private func moveFiltration(aimPoint: CGPoint){
-//        let sceenFrame = CGRect(x: size.width/2 + monster.frame.minX + 50,
-//                                y: size.height/2 + monster.frame.minY + 50,
-//                                width: monster.size.width - 100, height: monster.size.height - 100)
-        let backgroundFrame = CGRect(x: backgroundNode.size.width/2 + monster.frame.minX + 50,
-                                     y: backgroundNode.size.height/2 + monster.frame.minY + 50,
-                                     width: monster.size.width - 100, height: monster.size.height - 100)
+        let backgroundFrame = CGRect(x: backgroundNode.size.width/2 + monster.frame.minX,
+                                     y: backgroundNode.size.height/2 + monster.frame.minY,
+                                     width: monster.size.width, height: monster.size.height)
         let zeroFrame = CGRect(x: 0, y: 0, width: backgroundNode.size.width, height: backgroundNode.size.height)
         
         if !zeroFrame.contains(backgroundFrame) {
@@ -151,7 +131,9 @@ extension LYWarriorsScene: LYWarriorsJoystickProtocol{
     }
     
     func joystickMoved(Joystick: LYWarriorsJoystick,touches: Set<UITouch>, event: UIEvent) {
-        monster.zRotation = Joystick.rotateAngle
+        if OpenAngleRotate{
+            monster.zRotation = Joystick.rotateAngle
+        }
         if isJoystickTouchEnded{
             monster.walk()
             isJoystickTouchEnded = false
@@ -160,7 +142,14 @@ extension LYWarriorsScene: LYWarriorsJoystickProtocol{
             Joystick.trackingHandler = {[weak self] in
                 let point = CGPoint(x: (self?.monster.position.x)! + (self?.Joystick.velocity?.x)! * 0.2,
                                     y: (self?.monster.position.y)! + (self?.Joystick.velocity?.y)! * 0.2)
-                self?.moveFiltration(aimPoint: point)//中点起步
+                if (self?.Joystick.velocity?.x)! < 0 && (self?.monster.direction)!{
+                    //self?.monster.direction = false
+                    print("推")
+                }else if (self?.Joystick.velocity?.x)! > 0 && !(self?.monster.direction)!{
+                    //self?.monster.direction = true
+                    print("进")
+                }
+                self?.moveFiltration(aimPoint: point)
             }
         }
     }

@@ -10,10 +10,11 @@ import Foundation
 
 enum LYWarriorsSkillFunc: String {
     case unKown
-    case A="模拟技能A"
+    case raiseType="模拟技能A"
 }
 
 let SkillFuncViewHeight = 46
+let OpenAngleRotate: Bool = false
 
 
 enum LYWarriorsPersonFunc {
