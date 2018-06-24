@@ -26,6 +26,12 @@ enum LYWarriorsPersonFunc {
     case grapplePerson //格斗家
 }
 
+//1: 移动
+//2: 移动范围限制
+//3: 移动方向判定
+//4: 
+
+
 /*
  *    1.剑客- 长剑
  */

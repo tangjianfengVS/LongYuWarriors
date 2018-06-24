@@ -31,9 +31,11 @@ class LYWarriorsRole: SKSpriteNode {
     var locational: CGRect = .zero
     var direction: Bool = true{                                //方向
         didSet{
-            let rotate = SKAction.rotate(byAngle: direction ? CGFloat(Double.pi) : CGFloat(-Double.pi), duration: 1)
-            let repeatAction = SKAction.repeat(rotate, count: 1)
-            run(repeatAction, withKey: "rotate")
+            //self.zPosition
+//            let rotate = SKAction.rotate(byAngle: direction ? CGFloat(Double.pi) : CGFloat(-Double.pi), duration: 1)
+//            let repeatAction = SKAction.repeat(rotate, count: 1)
+//            run(repeatAction, withKey: "rotate")
+            print(direction ? "调头--进":"调头--退")
         }
     }
     
