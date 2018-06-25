@@ -66,33 +66,36 @@ class LYWarriorsScene: SKScene {
     private func moveFiltration(aimPoint: CGPoint){
         let pointBackground = CGPoint(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2,
                                       y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
-        var interval: TimeInterval = 0.1
-        var openMove: Bool = true
+        var interval: TimeInterval = 0.06
         if pointBackground.y <= size.height/2 - mapOffsetSize.y{//right
-            if pointBackground.x <= size.width/2 - mapOffsetTopSize ||
-                pointBackground.x >= size.width/2 + mapOffsetSize.x{
-                openMove = false
-                interval = 0.05
+            if pointBackground.x >= size.width/2 - mapOffsetSize.x &&
+                pointBackground.x <= size.width/2 + mapOffsetTopSize {
+                updateBackgroundAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y)
+            }else{
+                interval = 0.03
             }
         }else if pointBackground.y >= size.height/2 + mapOffsetSize.y{//left
-            if pointBackground.x <= size.width/2 - mapOffsetTopSize ||
-                pointBackground.x >= size.width/2 + mapOffsetSize.x{
-                openMove = false
-                interval = 0.05
+            if pointBackground.x >= size.width/2 - mapOffsetSize.x &&
+                pointBackground.x <= size.width/2 + mapOffsetTopSize {
+                updateBackgroundAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y)
+            }else{
+                interval = 0.03
             }
         }else if pointBackground.x >= size.width/2 + mapOffsetTopSize{//top
-            if pointBackground.y <= size.height/2 - mapOffsetSize.y ||
-                pointBackground.y >= size.height/2 + mapOffsetSize.y{
-                openMove = false
-                interval = 0.05
+            if pointBackground.y >= size.height/2 - mapOffsetSize.y &&
+                pointBackground.y <= size.height/2 + mapOffsetSize.y {
+                updateBackgroundAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
+            }else{
+                interval = 0.03
             }
         }else if pointBackground.x <= size.width/2 - mapOffsetSize.x{//bottom
-            if pointBackground.y <= size.height/2 - mapOffsetSize.y ||
-                pointBackground.y >= size.height/2 + mapOffsetSize.y{
-                openMove = false
-                interval = 0.05
+            if pointBackground.y >= size.height/2 - mapOffsetSize.y &&
+                pointBackground.y <= size.height/2 + mapOffsetSize.y {
+                updateBackgroundAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
+            }else{
+                interval = 0.03
             }
-        }else if openMove{
+        }else{
             let moveBackground = SKAction.move(to: pointBackground, duration: interval)
             sceneSpace.run(moveBackground)
         }
@@ -102,7 +105,7 @@ class LYWarriorsScene: SKScene {
     
     private func updateBackgroundAction(x: CGFloat, y: CGFloat){
         let pointBackground = CGPoint(x: x, y: y)
-        let moveBackground = SKAction.move(to: pointBackground, duration: 0.1)
+        let moveBackground = SKAction.move(to: pointBackground, duration: 0.06)
         sceneSpace.run(moveBackground)
     }
 
@@ -150,10 +153,10 @@ extension LYWarriorsScene: LYWarriorsJoystickProtocol{
 
 extension LYWarriorsScene: SKPhysicsContactDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
-
+        print("碰撞中...")
     }
 
     func didEnd(_ contact: SKPhysicsContact) {
-        
+        print("碰撞结束...",contact.contactPoint,contact.contactNormal)
     }
 }
