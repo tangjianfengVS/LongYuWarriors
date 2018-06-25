@@ -13,7 +13,7 @@ import GameplayKit
 class LYWarriorsGameSceneVC: UIViewController {
     //MARK : 场景
     private(set) lazy var scene: LYWarriorsScene = {
-        let scenes = LYWarriorsScene.init(size: UIScreen.main.bounds.size)
+        let scenes = LYWarriorsScene(sizes: UIScreen.main.bounds.size, type: .floorType)
         scenes.scaleMode = .aspectFill
         return scenes
     }()

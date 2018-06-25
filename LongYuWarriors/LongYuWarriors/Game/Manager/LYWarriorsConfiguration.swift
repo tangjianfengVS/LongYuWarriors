@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 enum LYWarriorsSkillFunc: String {
     case unKown
     case raiseType="模拟技能A"
 }
 
+let SpaceOffsetSize = CGSize(width: 30, height: 50)
+let SpaceOffsetTopSize: CGFloat = 100
 let SkillFuncViewHeight = 46
 let OpenAngleRotate: Bool = false
 

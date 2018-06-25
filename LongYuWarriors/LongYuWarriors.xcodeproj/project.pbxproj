@@ -41,6 +41,7 @@
 		7E74733720BAA30000665FAC /* LYWarriorsBluetoothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74733520BAA30000665FAC /* LYWarriorsBluetoothCell.swift */; };
 		7E74733820BAA30000665FAC /* LYWarriorsBluetoothCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E74733620BAA30000665FAC /* LYWarriorsBluetoothCell.xib */; };
 		7E74733A20BAC14000665FAC /* LYWarriorsBCBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74733920BAC14000665FAC /* LYWarriorsBCBPeripheral.swift */; };
+		7ED0D90020E07C9E00970FD5 /* LYWarriorsSceneSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D8FF20E07C9E00970FD5 /* LYWarriorsSceneSpace.swift */; };
 		7EDE434720D76EAB00561069 /* New_stop.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE434620D76EAA00561069 /* New_stop.atlas */; };
 		7EDE434920D77C5200561069 /* New_run.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE434820D77C5200561069 /* New_run.atlas */; };
 		7EDE434B20D798F800561069 /* New_raise.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE434A20D798F700561069 /* New_raise.atlas */; };
@@ -86,6 +87,7 @@
 		7E74733520BAA30000665FAC /* LYWarriorsBluetoothCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsBluetoothCell.swift; sourceTree = "<group>"; };
 		7E74733620BAA30000665FAC /* LYWarriorsBluetoothCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsBluetoothCell.xib; sourceTree = "<group>"; };
 		7E74733920BAC14000665FAC /* LYWarriorsBCBPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsBCBPeripheral.swift; sourceTree = "<group>"; };
+		7ED0D8FF20E07C9E00970FD5 /* LYWarriorsSceneSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsSceneSpace.swift; sourceTree = "<group>"; };
 		7EDE434620D76EAA00561069 /* New_stop.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = New_stop.atlas; sourceTree = "<group>"; };
 		7EDE434820D77C5200561069 /* New_run.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = New_run.atlas; sourceTree = "<group>"; };
 		7EDE434A20D798F700561069 /* New_raise.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = New_raise.atlas; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0BDC3620B5B3370060B1BC /* LYWarriorsScene.swift */,
+				7ED0D8FF20E07C9E00970FD5 /* LYWarriorsSceneSpace.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				7E74733720BAA30000665FAC /* LYWarriorsBluetoothCell.swift in Sources */,
 				7E0BE48C20CD0D25009952CF /* LYWarriorsConfiguration.swift in Sources */,
 				7E0D742020B3151F00DC203E /* LYWarriorsGameArenaVC.swift in Sources */,
+				7ED0D90020E07C9E00970FD5 /* LYWarriorsSceneSpace.swift in Sources */,
 				7E08293520B1B4780070070D /* LYWarriorsInterfaceCell.swift in Sources */,
 				7E2DE5FE20B45932005DC6A7 /* LYWarriorsJoystick.swift in Sources */,
 			);
