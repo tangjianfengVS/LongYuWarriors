@@ -15,48 +15,47 @@ enum LYWarriorSpaceType {
 class LYWarriorsSceneSpace: SKSpriteNode {
     private let spaceType: LYWarriorSpaceType!
     
-    private lazy  var topNode: SKSpriteNode={
-        let node = SKSpriteNode(imageNamed: "bg")
-        node.size = CGSize(width: SpaceOffsetTopSize, height: size.height+SpaceOffsetSize.height*2)
-        node.position = CGPoint(x: -(size.width + SpaceOffsetTopSize)/2, y: 0)
+    private lazy var topNode: SKSpriteNode={
+        let node = SKSpriteNode(imageNamed: "Snip20180630_4")
+        node.size = CGSize(width: ScreenWidth - size.width, height: size.height)
+        node.position = CGPoint(x: -ScreenWidth/2, y: 0)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = 2
+        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.topCrashType.rawValue)
         return node
     }()
     private lazy  var rightNode: SKSpriteNode={
         let node = SKSpriteNode(imageNamed: "bg")
-        node.size = CGSize(width: size.width, height: SpaceOffsetSize.height)
-        node.position = CGPoint(x: 0, y: (size.height + SpaceOffsetSize.height)/2)
+        node.size = CGSize(width: ScreenWidth, height: SpaceOffsetSize.height)
+        node.position = CGPoint(x: -(ScreenWidth - size.width)/2, y: (size.height + SpaceOffsetSize.height)/2)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = 2
+        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
         return node
     }()
-    private lazy  var bottomNode: SKSpriteNode={
+    private lazy var bottomNode: SKSpriteNode={
         let node = SKSpriteNode(imageNamed: "bg")
         node.size = CGSize(width: SpaceOffsetSize.width, height: size.height+SpaceOffsetSize.height*2)
         node.position = CGPoint(x: (size.width + SpaceOffsetSize.width)/2, y: 0)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = 2
+        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
         return node
     }()
     private lazy  var leftNode: SKSpriteNode={
         let node = SKSpriteNode(imageNamed: "bg")
-        node.size = CGSize(width: size.width, height: SpaceOffsetSize.height)
-        node.position = CGPoint(x: 0, y: -(size.height + SpaceOffsetSize.height)/2)
+        node.size = CGSize(width: ScreenWidth, height: SpaceOffsetSize.height)
+        node.position = CGPoint(x: -(ScreenWidth - size.width)/2, y: -(size.height + SpaceOffsetSize.height)/2)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = 2
+        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
         return node
     }()
     
-    init(type: LYWarriorSpaceType, positions: CGPoint) {
+    init(type: LYWarriorSpaceType) {
         spaceType = type
-        let texture = SKTexture(imageNamed: "Snip20180610_3")
-        super.init(texture: texture, color: UIColor.cyan, size: CGSize(width: 400, height: 950))
-        position = positions
+        let texture = SKTexture(imageNamed: "Snip20180630_3")
+        super.init(texture: texture, color: UIColor.cyan, size: CGSize(width: ScreenWidth/2, height: 950))
         setupUI()
     }
 

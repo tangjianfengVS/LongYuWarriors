@@ -16,17 +16,8 @@ class LYWarriorsScene: SKScene {
     private lazy var mapOffsetSize = CGPoint(x: (sceneSpace.size.width - size.width)/2 + SpaceOffsetSize.width,
                                              y: (sceneSpace.size.height - size.height)/2 + SpaceOffsetSize.height)
     //MARK : 人物
-    private(set) lazy var monster: LYWarriorsRole = {
-        let node = LYWarriorsRole.shared
-        //+ (SKPhysicsBody *)bodyWithRectangleOfSize:(CGSize)s;创建矩形的物理体
-        //+ (SKPhysicsBody *)bodyWithCircleOfRadius:(CGFloat)r;创建圆形的物理体
-        //+ (SKPhysicsBody *)bodyWithPolygonFromPath:(CGPathRef)path;创建自定义的物理体
-        node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
-        node.physicsBody?.isDynamic = true
-        node.physicsBody?.categoryBitMask = 1
-        node.physicsBody?.contactTestBitMask = 2
-        return node
-    }()
+    let monster = LYWarriorsRole.shared
+    
     //MARK : 摇杆
     private var isJoystickTouchEnded: Bool=true
     private lazy var Joystick: LYWarriorsJoystick = {
@@ -38,7 +29,8 @@ class LYWarriorsScene: SKScene {
     }()
     //MARK : 背景
     private lazy var sceneSpace: LYWarriorsSceneSpace = {
-        let space = LYWarriorsSceneSpace(type: spaceType, positions: CGPoint(x: size.width/2, y: size.height/2))
+        let space = LYWarriorsSceneSpace(type: spaceType)
+        space.position = CGPoint(x: size.width/2 + (size.width - space.size.width)/2, y: size.height/2)
         return space
     }()
     
@@ -63,37 +55,37 @@ class LYWarriorsScene: SKScene {
         Joystick.position = CGPoint(x: frame.maxX - Joystick.size.width/2 - 10, y: Joystick.size.width/2 + 10)
     }
 
-    private func moveFiltration(aimPoint: CGPoint){
-        let pointBackground = CGPoint(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2,
+    private func moveFiltration(aimPoint: CGPoint){        
+        let pointBackground = CGPoint(x: sceneSpace.position.x,// - (Joystick.velocity?.x)! * 0.2,
                                       y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
-        var interval: TimeInterval = 0.06
+        var interval: TimeInterval = 0.08
         if pointBackground.y <= size.height/2 - mapOffsetSize.y{//right
             if pointBackground.x >= size.width/2 - mapOffsetSize.x &&
                 pointBackground.x <= size.width/2 + mapOffsetTopSize {
-                updateBackgroundAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y)
+                runSceneSpaceAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y, duration: interval)
             }else{
-                interval = 0.03
+                interval = 0.04
             }
         }else if pointBackground.y >= size.height/2 + mapOffsetSize.y{//left
             if pointBackground.x >= size.width/2 - mapOffsetSize.x &&
                 pointBackground.x <= size.width/2 + mapOffsetTopSize {
-                updateBackgroundAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y)
+                runSceneSpaceAction(x: sceneSpace.position.x - (Joystick.velocity?.x)! * 0.2, y: sceneSpace.position.y, duration: interval)
             }else{
-                interval = 0.03
+                interval = 0.04
             }
         }else if pointBackground.x >= size.width/2 + mapOffsetTopSize{//top
             if pointBackground.y >= size.height/2 - mapOffsetSize.y &&
                 pointBackground.y <= size.height/2 + mapOffsetSize.y {
-                updateBackgroundAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
+                runSceneSpaceAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2, duration: interval)
             }else{
-                interval = 0.03
+                interval = 0.04
             }
         }else if pointBackground.x <= size.width/2 - mapOffsetSize.x{//bottom
             if pointBackground.y >= size.height/2 - mapOffsetSize.y &&
                 pointBackground.y <= size.height/2 + mapOffsetSize.y {
-                updateBackgroundAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2)
+                runSceneSpaceAction(x: sceneSpace.position.x, y: sceneSpace.position.y - (Joystick.velocity?.y)! * 0.2, duration: interval)
             }else{
-                interval = 0.03
+                interval = 0.04
             }
         }else{
             let moveBackground = SKAction.move(to: pointBackground, duration: interval)
@@ -103,9 +95,9 @@ class LYWarriorsScene: SKScene {
         monster.run(monsterMove)
     }
     
-    private func updateBackgroundAction(x: CGFloat, y: CGFloat){
+    private func runSceneSpaceAction(x: CGFloat, y: CGFloat, duration: TimeInterval){
         let pointBackground = CGPoint(x: x, y: y)
-        let moveBackground = SKAction.move(to: pointBackground, duration: 0.06)
+        let moveBackground = SKAction.move(to: pointBackground, duration: duration)
         sceneSpace.run(moveBackground)
     }
 

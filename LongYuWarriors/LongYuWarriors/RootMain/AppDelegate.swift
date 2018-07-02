@@ -9,24 +9,31 @@
 import UIKit
 
 let LYWarriorsUpdateRootNotif = "LYWarriorsGameSceneVCNotification"
+let LYWarriorsLoginRootNotif = "LYWarriorsGameSceneVCNotification"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LYWarriorsRootMainVC()
+        window?.rootViewController = LYWarriorsHomeServiceVC()
         window?.makeKeyAndVisible()
         
         NotificationCenter.default.addObserver(self, selector: #selector(sceneUpdateRootNotification), name:NSNotification.Name(rawValue: LYWarriorsUpdateRootNotif), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneLoginRootNotification), name:NSNotification.Name(rawValue: LYWarriorsLoginRootNotif), object: nil)
         return true
     }
     
     @objc func sceneUpdateRootNotification(noti: Notification) {
         if let VC = noti.object as? LYWarriorsGameSceneVC{
+            window?.rootViewController = VC
+        }
+    }
+    
+    @objc func sceneLoginRootNotification(noti: Notification) {
+        if let VC = noti.object as? LYWarriorsRootMainVC{
             window?.rootViewController = VC
         }
     }

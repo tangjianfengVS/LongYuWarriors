@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LYWarriorsHomeServiceVI" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="277" height="363"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBm-FL-qCb">
+                    <rect key="frame" x="0.0" y="0.0" width="277" height="125"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择大区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hb-0G-9zL">
+                            <rect key="frame" x="97" y="6" width="82" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="2Hb-0G-9zL" firstAttribute="centerX" secondItem="KBm-FL-qCb" secondAttribute="centerX" id="8cL-1C-YDx"/>
+                        <constraint firstAttribute="height" constant="125" id="piY-jr-h5I"/>
+                        <constraint firstItem="2Hb-0G-9zL" firstAttribute="top" secondItem="KBm-FL-qCb" secondAttribute="top" constant="6" id="rwa-4T-kpE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8K-Iq-mvR">
+                    <rect key="frame" x="0.0" y="137" width="277" height="149"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择服务器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-9b-tDL">
+                            <rect key="frame" x="92" y="6" width="92" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="qyb-9b-tDL" firstAttribute="top" secondItem="c8K-Iq-mvR" secondAttribute="top" constant="6" id="K0j-Lu-6ax"/>
+                        <constraint firstAttribute="height" constant="149" id="kzf-cA-YHk"/>
+                        <constraint firstItem="qyb-9b-tDL" firstAttribute="centerX" secondItem="c8K-Iq-mvR" secondAttribute="centerX" id="seL-eC-FKr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c8K-Iq-mvR" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="AlE-5C-zni"/>
+                <constraint firstItem="c8K-Iq-mvR" firstAttribute="top" secondItem="KBm-FL-qCb" secondAttribute="bottom" constant="12" id="HNW-QT-VaX"/>
+                <constraint firstItem="KBm-FL-qCb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LDW-Up-aNE"/>
+                <constraint firstItem="KBm-FL-qCb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="QQ3-m6-ag5"/>
+                <constraint firstItem="c8K-Iq-mvR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ttH-tJ-9Qk"/>
+                <constraint firstItem="KBm-FL-qCb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ueZ-h8-rOy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="areaLab" destination="2Hb-0G-9zL" id="9r5-O8-yr3"/>
+                <outlet property="areaView" destination="KBm-FL-qCb" id="Kmv-Qz-LTS"/>
+                <outlet property="bottomLayoutHeight" destination="kzf-cA-YHk" id="7YI-a4-nqc"/>
+                <outlet property="serverLab" destination="qyb-9b-tDL" id="lbS-KN-uYi"/>
+                <outlet property="serverView" destination="c8K-Iq-mvR" id="kTf-To-yay"/>
+            </connections>
+            <point key="canvasLocation" x="137.5" y="-82.5"/>
+        </view>
+    </objects>
+</document>

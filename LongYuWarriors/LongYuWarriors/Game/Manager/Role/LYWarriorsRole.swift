@@ -8,13 +8,22 @@
 
 import SpriteKit
 import UIKit
+//+ (SKPhysicsBody *)bodyWithRectangleOfSize:(CGSize)s;创建矩形的物理体
+//+ (SKPhysicsBody *)bodyWithCircleOfRadius:(CGFloat)r;创建圆形的物理体
+//+ (SKPhysicsBody *)bodyWithPolygonFromPath:(CGPathRef)path;创建自定义的物理体
 
 class LYWarriorsRole: SKSpriteNode {
-    private var walkSize: CGSize = .zero
-    
     static let shared: LYWarriorsRole={
         let texture = SKTexture(imageNamed: "new_stop_0001")//"goblin_idle_0001")
         let role = LYWarriorsRole(texture: texture)
+        let physicsBodySize = CGSize(width: LimitWidth, height: role.size.height)
+        let center = CGPoint(x: (role.size.width - LimitWidth)/2, y: role.position.y)
+        role.physicsBody = SKPhysicsBody(rectangleOf: physicsBodySize, center: center)
+        //let path = CGPath(ellipseIn: CGRect(x: 0, y: 0, width: LimitWidth, height: role.size.height), transform: nil)
+        //role.physicsBody = SKPhysicsBody(edgeLoopFrom: path)//SKPhysicsBody(edgeChainFrom: path)
+        role.physicsBody?.isDynamic = true
+        role.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.masterType.rawValue)
+        role.physicsBody?.contactTestBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
         return role
     }()
     
