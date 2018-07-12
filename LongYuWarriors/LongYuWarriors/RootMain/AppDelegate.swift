@@ -8,34 +8,42 @@
 
 import UIKit
 
-let LYWarriorsUpdateRootNotif = "LYWarriorsGameSceneVCNotification"
-let LYWarriorsLoginRootNotif = "LYWarriorsGameSceneVCNotification"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+    private(set) var safeSize: CGSize = .zero
+    var currentVC: UIViewController?
+    
+    lazy var backBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 35, y: 10, width: 40, height: 40))
+        btn.backgroundColor = UIColor.white
+        btn.setImage(UIImage(named: "back_black"), for: .normal)
+        btn.circularBead(size: nil, corner: nil)
+        btn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        return btn
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LYWarriorsHomeServiceVC()
+        window?.rootViewController = LYWarriorsHomeServiceVC(clousre: { [weak self] size in
+            self?.safeSize = size
+        })
         window?.makeKeyAndVisible()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(sceneUpdateRootNotification), name:NSNotification.Name(rawValue: LYWarriorsUpdateRootNotif), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(sceneLoginRootNotification), name:NSNotification.Name(rawValue: LYWarriorsLoginRootNotif), object: nil)
+        setBackUI()
         return true
     }
     
     @objc func sceneUpdateRootNotification(noti: Notification) {
-        if let VC = noti.object as? LYWarriorsGameSceneVC{
+        backBtn.removeFromSuperview()
+        if let VC = noti.object as? LYWarriorsHomeSceneVC{
+            window?.rootViewController = VC
+        }else if let VC = noti.object as? LYWarriorsChoosegRoleVC{
+            window?.rootViewController = VC
+        }else if let VC = noti.object as? LYWarriorsDuelDetailVC{
             window?.rootViewController = VC
         }
-    }
-    
-    @objc func sceneLoginRootNotification(noti: Notification) {
-        if let VC = noti.object as? LYWarriorsRootMainVC{
-            window?.rootViewController = VC
-        }
+        setBackUI()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -59,7 +67,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+extension AppDelegate{
+    func setBackUI() {
+        window?.addSubview(backBtn)
+    }
+    
+    @objc func backAction() {
+        if let _ = currentVC?.dismiss(animated: true, completion: nil) {
+            currentVC?.dismiss(animated: true, completion: nil)
+            currentVC = nil
+        }
+    }
 }
 

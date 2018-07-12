@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LYWarriorsDuelBeginShowVI" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VSLabel" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-FG-PQu">
+                    <rect key="frame" x="142" y="313.5" width="90" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="dST-Uq-vXa"/>
+                        <constraint firstAttribute="width" constant="90" id="igK-zd-Le2"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="绿毛兽" translatesAutoresizingMaskIntoConstraints="NO" id="05w-mp-x5J">
+                    <rect key="frame" x="114.5" y="92.5" width="145" height="171"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="绿毛兽" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-KQ-RO6">
+                    <rect key="frame" x="114.5" y="423.5" width="145" height="171"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="mJj-KQ-RO6" firstAttribute="top" secondItem="cSx-FG-PQu" secondAttribute="bottom" constant="50" id="IJY-tJ-jQx"/>
+                <constraint firstItem="05w-mp-x5J" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="XfT-3h-s6S"/>
+                <constraint firstItem="cSx-FG-PQu" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gxk-JD-W5O"/>
+                <constraint firstItem="mJj-KQ-RO6" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="k1S-YU-6XU"/>
+                <constraint firstItem="cSx-FG-PQu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="tG9-6K-4zb"/>
+                <constraint firstItem="cSx-FG-PQu" firstAttribute="top" secondItem="05w-mp-x5J" secondAttribute="bottom" constant="50" id="xz6-7q-i3i"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="defierImageView" destination="05w-mp-x5J" id="qJh-S0-4PG"/>
+                <outlet property="mosterImageView" destination="mJj-KQ-RO6" id="2rX-rv-zom"/>
+                <outlet property="vsImageView" destination="cSx-FG-PQu" id="TKW-KL-hYP"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="102.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="VSLabel" width="340" height="254"/>
+        <image name="绿毛兽" width="145" height="171"/>
+    </resources>
+</document>

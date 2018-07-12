@@ -19,24 +19,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="133" height="182"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="绿毛兽" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-Oi-c8U">
-                        <rect key="frame" x="0.0" y="0.0" width="133" height="182"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="绿毛兽" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-Oi-c8U">
+                        <rect key="frame" x="0.0" y="0.0" width="133" height="161"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绿毛兽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck3-Bx-j9i">
-                        <rect key="frame" x="43.5" y="159" width="46" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.97617585281064323" green="0.99942404029999998" blue="0.12215702322836268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="44.5" y="163" width="43" height="17"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="WKg-Oi-c8U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="15Y-nV-YZx"/>
-                <constraint firstAttribute="bottom" secondItem="Ck3-Bx-j9i" secondAttribute="bottom" constant="5" id="3Hw-GN-JY6"/>
-                <constraint firstAttribute="bottom" secondItem="WKg-Oi-c8U" secondAttribute="bottom" id="kBL-HI-FrL"/>
+                <constraint firstItem="Ck3-Bx-j9i" firstAttribute="top" secondItem="WKg-Oi-c8U" secondAttribute="bottom" constant="2" id="5Eu-Xz-bh2"/>
                 <constraint firstItem="Ck3-Bx-j9i" firstAttribute="centerX" secondItem="WKg-Oi-c8U" secondAttribute="centerX" id="o1n-s8-muB"/>
                 <constraint firstAttribute="trailing" secondItem="WKg-Oi-c8U" secondAttribute="trailing" id="sgm-mW-ZC9"/>
+                <constraint firstAttribute="bottom" secondItem="Ck3-Bx-j9i" secondAttribute="bottom" constant="2" id="tl1-KX-BKI"/>
                 <constraint firstItem="WKg-Oi-c8U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x4t-gt-xuE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

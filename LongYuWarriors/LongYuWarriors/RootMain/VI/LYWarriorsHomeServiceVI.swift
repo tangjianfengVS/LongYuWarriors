@@ -15,11 +15,11 @@ class LYWarriorsHomeServiceVI: UIView {
     @IBOutlet weak var serverLab: UILabel!
     @IBOutlet weak var bottomLayoutHeight: NSLayoutConstraint!
     
-    private let RowBorder: CGFloat = 18
-    private let marginRow: CGFloat = 22
+    private let RowBorder: CGFloat = 15
+    private let marginRow: CGFloat = 20
     private let marginLine: CGFloat = 10
     private let count: CGFloat = 3
-    private lazy var btnSize = CGSize(width: (ScreenWidth - ServiceViewMargin * 2 - RowBorder * 2 - marginRow * (count-1))/count,height: 30)
+    private lazy var btnSize = CGSize(width: (ServiceViewWidth - RowBorder*2 - marginRow*(count-1))/count,height: 30)
     
     private let SelectedColor = UIColor(red: 68/256.0, green: 213/256.0, blue: 237/256.0, alpha: 1)
     private var areaBtnList: [UIButton] = []
@@ -28,17 +28,20 @@ class LYWarriorsHomeServiceVI: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        areaView.alpha = 0.3
-        serverView.alpha = 0.3
         setAreaUI()
         clickAreaBtn(btn: areaBtnList.first!)
     }
     
-//    func update(type: LYWarriorsAreaServiceType) -> CGFloat {
-//        return 300
-//    }
-    
     private func setAreaUI(){
+        areaLab.snp.makeConstraints { (make) in
+            make.top.equalTo(areaView).offset(6)
+            make.centerX.equalTo(self)
+        }
+        serverLab.snp.makeConstraints { (make) in
+            make.top.equalTo(serverView).offset(6)
+            make.centerX.equalTo(self)
+        }
+        
         for (index,title) in AreaList.enumerated() {
             let btn = UIButton()
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -55,13 +58,19 @@ class LYWarriorsHomeServiceVI: UIView {
 
             let line: CGFloat = CGFloat(index/Int(count))
             let row: CGFloat = CGFloat(index%Int(count))
-
+            
             btn.snp.makeConstraints { (make) in
                 make.size.equalTo(btnSize)
                 make.top.equalTo(areaLab.snp.bottom).offset(marginLine + line * (marginLine + btnSize.height))
                 make.left.equalTo(areaView).offset(RowBorder + row * (marginRow + btnSize.width))
             }
         }
+        areaView.alpha = 0.25
+        serverView.alpha = 0.25
+        areaView.layer.cornerRadius = 5
+        areaView.layer.masksToBounds = true
+        serverView.layer.cornerRadius = 5
+        serverView.layer.masksToBounds = true
     }
     
     private func updateAreaSubList(str: String){

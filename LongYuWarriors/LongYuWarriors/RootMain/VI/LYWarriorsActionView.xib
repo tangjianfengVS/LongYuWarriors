@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LYWarriorsActionView" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7q-TQ-qUU">
+                    <rect key="frame" x="120" y="3" width="140" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5PG-Df-RCF"/>
+                        <constraint firstAttribute="width" constant="140" id="JuG-xc-Wzo"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="区域开始按钮"/>
+                    <connections>
+                        <action selector="clickBeginGame:" destination="iN0-l3-epB" eventType="touchUpInside" id="ujy-Da-2cb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlp-65-DAS">
+                    <rect key="frame" x="0.0" y="14" width="58" height="29"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="创建角色"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niq-Hx-5Js">
+                    <rect key="frame" x="319" y="15" width="54" height="28"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="结束游戏"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="niq-Hx-5Js" secondAttribute="trailing" constant="8" id="A8R-CT-SXc"/>
+                <constraint firstItem="niq-Hx-5Js" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="LUO-xw-hwy"/>
+                <constraint firstItem="Dlp-65-DAS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="S1I-RN-bgc"/>
+                <constraint firstItem="Dlp-65-DAS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y7P-3O-iAr"/>
+                <constraint firstItem="n7q-TQ-qUU" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="f3Y-TT-IxF"/>
+                <constraint firstItem="n7q-TQ-qUU" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gpx-pL-DcF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="36.5" y="391.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="区域开始按钮" width="98" height="36"/>
+    </resources>
+</document>

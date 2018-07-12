@@ -9,13 +9,6 @@
 import UIKit
 import SpriteKit
 
-protocol LYWarriorsJoystickProtocol {
-    func joystickBegan(Joystick: LYWarriorsJoystick,touches: Set<UITouch>,event: UIEvent);
-    func joystickMoved(Joystick: LYWarriorsJoystick,touches: Set<UITouch>,event: UIEvent);
-    func joystickEnded(Joystick: LYWarriorsJoystick,touches: Set<UITouch>,event: UIEvent);
-    func joystickCanceled(Joystick: LYWarriorsJoystick,touches: Set<UITouch>,event: UIEvent);
-}
-
 enum MasterLocationType: NSInteger {
     case centre=1
     case bicyclic=2

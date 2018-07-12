@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LYWarriorsDuelDetailFuncVI" customModule="LongYuWarriors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="426"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-LV-GfX">
+                    <rect key="frame" x="0.0" y="0.0" width="312" height="376"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saf-yc-WX0" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="89.5" y="163.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="选择房间"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwq-Om-M8p" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="160" y="303.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="FPe-z4-ANZ"/>
+                        <constraint firstAttribute="height" constant="62" id="VWU-Lx-hDU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="退出决斗"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9J-87-AZP" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="89.5" y="233.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-zk-GQX" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="89.5" y="303.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGQ-cu-fSV">
+                    <rect key="frame" x="152" y="0.0" width="8" height="369"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="cKz-Ys-Fw4"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3no-TQ-DHv">
+                    <rect key="frame" x="0.0" y="388" width="312" height="38"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="AhC-DO-4vs"/>
+                    </constraints>
+                    <state key="normal" title="开始(自动匹配)"/>
+                    <connections>
+                        <action selector="clickGameMateBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2Kk-W6-p2L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-nR-Bsp" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="160" y="163.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="创建房间"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-Rl-cUB" customClass="LYWarriorsDuelDetailFuncBtn" customModule="LongYuWarriors" customModuleProvider="target">
+                    <rect key="frame" x="160" y="233.5" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CsT-nR-Bsp" firstAttribute="width" secondItem="hwq-Om-M8p" secondAttribute="width" id="3nn-1u-i73"/>
+                <constraint firstItem="hSA-Rl-cUB" firstAttribute="top" secondItem="CsT-nR-Bsp" secondAttribute="bottom" constant="8" id="8SU-bC-UhF"/>
+                <constraint firstItem="ZGQ-cu-fSV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="8xu-Kn-QFg"/>
+                <constraint firstItem="saf-yc-WX0" firstAttribute="height" secondItem="hwq-Om-M8p" secondAttribute="height" id="9XO-KX-Okf"/>
+                <constraint firstItem="hSA-Rl-cUB" firstAttribute="height" secondItem="hwq-Om-M8p" secondAttribute="height" id="9eg-2q-TzZ"/>
+                <constraint firstItem="v9J-87-AZP" firstAttribute="width" secondItem="hwq-Om-M8p" secondAttribute="width" id="AHt-dO-sNk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3no-TQ-DHv" secondAttribute="bottom" id="BRz-GY-Y0g"/>
+                <constraint firstItem="aPg-zk-GQX" firstAttribute="bottom" secondItem="hwq-Om-M8p" secondAttribute="bottom" id="BeI-z3-0g4"/>
+                <constraint firstItem="aPg-zk-GQX" firstAttribute="height" secondItem="hwq-Om-M8p" secondAttribute="height" id="ByF-cg-aj1"/>
+                <constraint firstItem="ZGQ-cu-fSV" firstAttribute="centerX" secondItem="ilZ-LV-GfX" secondAttribute="centerX" id="Hhc-zQ-O7W"/>
+                <constraint firstItem="hwq-Om-M8p" firstAttribute="top" secondItem="hSA-Rl-cUB" secondAttribute="bottom" constant="8" id="Hsh-ew-7rd"/>
+                <constraint firstItem="aPg-zk-GQX" firstAttribute="trailing" secondItem="v9J-87-AZP" secondAttribute="trailing" id="KML-40-8JR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3no-TQ-DHv" secondAttribute="trailing" id="Lla-QB-rzd"/>
+                <constraint firstItem="3no-TQ-DHv" firstAttribute="top" secondItem="ZGQ-cu-fSV" secondAttribute="bottom" constant="19" id="MA1-pp-FLe"/>
+                <constraint firstItem="hSA-Rl-cUB" firstAttribute="width" secondItem="hwq-Om-M8p" secondAttribute="width" id="Mff-J0-tkD"/>
+                <constraint firstItem="aPg-zk-GQX" firstAttribute="width" secondItem="hwq-Om-M8p" secondAttribute="width" id="N1E-6w-kfX"/>
+                <constraint firstItem="3no-TQ-DHv" firstAttribute="top" secondItem="ilZ-LV-GfX" secondAttribute="bottom" constant="12" id="N4N-bn-GiJ"/>
+                <constraint firstItem="ilZ-LV-GfX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QGt-SC-92b"/>
+                <constraint firstItem="CsT-nR-Bsp" firstAttribute="height" secondItem="hwq-Om-M8p" secondAttribute="height" id="aoM-zg-aai"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ilZ-LV-GfX" secondAttribute="trailing" id="bHL-jy-g4l"/>
+                <constraint firstItem="3no-TQ-DHv" firstAttribute="top" secondItem="hwq-Om-M8p" secondAttribute="bottom" constant="22.5" id="bpH-F8-Ux4"/>
+                <constraint firstItem="3no-TQ-DHv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ftF-DZ-54X"/>
+                <constraint firstItem="CsT-nR-Bsp" firstAttribute="leading" secondItem="ZGQ-cu-fSV" secondAttribute="trailing" id="iSj-Gv-HqA"/>
+                <constraint firstItem="v9J-87-AZP" firstAttribute="bottom" secondItem="hSA-Rl-cUB" secondAttribute="bottom" id="ksD-Ns-nnC"/>
+                <constraint firstItem="ilZ-LV-GfX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lYc-cG-XjO"/>
+                <constraint firstItem="v9J-87-AZP" firstAttribute="height" secondItem="hwq-Om-M8p" secondAttribute="height" id="mHX-yX-Wty"/>
+                <constraint firstItem="hSA-Rl-cUB" firstAttribute="leading" secondItem="CsT-nR-Bsp" secondAttribute="leading" id="opE-qM-QH8"/>
+                <constraint firstItem="hwq-Om-M8p" firstAttribute="leading" secondItem="hSA-Rl-cUB" secondAttribute="leading" id="qY4-WI-TpX"/>
+                <constraint firstItem="ZGQ-cu-fSV" firstAttribute="leading" secondItem="saf-yc-WX0" secondAttribute="trailing" id="sbt-Xh-dAM"/>
+                <constraint firstItem="v9J-87-AZP" firstAttribute="trailing" secondItem="saf-yc-WX0" secondAttribute="trailing" id="uM8-eA-5aj"/>
+                <constraint firstItem="saf-yc-WX0" firstAttribute="width" secondItem="hwq-Om-M8p" secondAttribute="width" id="ubG-Ce-plk"/>
+                <constraint firstItem="saf-yc-WX0" firstAttribute="bottom" secondItem="CsT-nR-Bsp" secondAttribute="bottom" id="z64-mv-bJx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backImageView" destination="ilZ-LV-GfX" id="YVK-Dv-hWe"/>
+                <outlet property="beginGameBtn" destination="3no-TQ-DHv" id="Qhi-dN-szI"/>
+            </connections>
+            <point key="canvasLocation" x="2" y="337"/>
+        </view>
+    </objects>
+</document>

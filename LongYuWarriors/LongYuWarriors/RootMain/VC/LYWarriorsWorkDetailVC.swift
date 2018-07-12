@@ -17,7 +17,7 @@ class LYWarriorsWorkDetailVC: UIViewController {
     }
     
     @IBAction func clickBeginGameBtn(_ sender: UIButton) {
-        present(LYWarriorsGameSceneVC(), animated: true, completion: nil)
+        //present(LYWarriorsGameSceneVC(), animated: true, completion: nil)
     }
     
     @IBAction func clickBluetoothFuncBtn(_ sender: UIButton) {

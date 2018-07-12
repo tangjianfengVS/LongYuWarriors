@@ -26,3 +26,14 @@ extension UIView{
         layer.mask = shapeLayer
     }
 }
+
+
+extension TimeInterval{
+    //MRAK : 移动距离
+    static func moveTime(aimPoint: CGPoint, monsterPoint: CGPoint) -> TimeInterval{
+        let offsetX: CGFloat = monsterPoint.x - aimPoint.x
+        let offsetY: CGFloat = monsterPoint.y - aimPoint.y
+        let length = sqrt(offsetX * offsetX + offsetY * offsetY)
+        return Double(length/CitMoveSpeed)
+    }
+}
