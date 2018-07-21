@@ -14,7 +14,7 @@ class LYWarriorsCreatRoleCell: UICollectionViewCell {
     var professionalType: LYWarriorsProfessionalType?{
         didSet{
             if professionalType == nil {
-                backgroundColor = UIColor.white
+                showRoleView.backgroundColor = UIColor.white
             }else{
                 showRoleView.image = UIImage(named: professionalType!.rawValue)
             }
@@ -23,13 +23,12 @@ class LYWarriorsCreatRoleCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.clear
+        backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
-        backgroundColor = UIColor.white
         showRoleView.layer.cornerRadius = 5
         showRoleView.layer.masksToBounds = true
         
-        showRoleView.layer.borderColor = UIColor.blue.cgColor
+        showRoleView.layer.borderColor = UIColor(red: 255/256.0, green: 229/256.0, blue: 213/256.0, alpha: 1).cgColor
         showRoleView.layer.borderWidth = 2
     }
 

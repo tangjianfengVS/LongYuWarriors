@@ -40,7 +40,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="6xr-zN-UGs"/>
                             </constraints>
-                            <state key="normal" title="Button">
+                            <state key="normal" title="可用?">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
@@ -73,6 +73,9 @@
                                 <constraint firstAttribute="width" constant="55" id="tbk-Z2-Epa"/>
                             </constraints>
                             <state key="normal" title="确认"/>
+                            <connections>
+                                <action selector="clickVerifyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="lUl-Xq-qCQ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -105,6 +108,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelBtn" destination="AOm-J6-yrN" id="ryD-So-5V5"/>
+                <outlet property="nameText" destination="iN3-Oy-wMU" id="Dhv-7N-ypq"/>
+                <outlet property="verifyBtn" destination="5kD-dc-Rmi" id="TPZ-w8-XCY"/>
+            </connections>
             <point key="canvasLocation" x="-7.5" y="333.5"/>
         </view>
     </objects>

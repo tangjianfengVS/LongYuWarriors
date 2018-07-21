@@ -9,10 +9,31 @@
 import UIKit
 
 class LYWarriorsCreatRoleNameVI: UIView {
-
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var verifyBtn: UIButton!
+    
+    var clousre: ((Bool)->())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        nameText.returnKeyType = .done
+        nameText.delegate = self
     }
     
+    @IBAction func clickVerifyBtn(_ sender: UIButton) {
+        if clousre != nil {
+            clousre!(true)
+        }
+    }
+}
+
+extension LYWarriorsCreatRoleNameVI: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            textField.endEditing(true)
+            return false
+        }
+        return true
+    }
 }

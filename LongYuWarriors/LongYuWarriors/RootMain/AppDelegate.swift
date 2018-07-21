@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var allowRotation: ScreenRotationType = .all
     
     lazy var backBtn: UIButton = {
-        let btn = UIButton(frame: CGRect(x: 35, y: 10, width: 40, height: 40))
+        let btn = UIButton(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
         btn.backgroundColor = UIColor.white
         btn.setImage(UIImage(named: "back_black"), for: .normal)
         btn.circularBead(size: nil, corner: nil)

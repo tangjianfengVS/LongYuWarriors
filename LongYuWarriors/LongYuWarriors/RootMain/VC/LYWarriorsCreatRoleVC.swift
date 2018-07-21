@@ -24,17 +24,39 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
         return LYWarriorsProfessionalType.allValues
     }()
     
+    private lazy var nameLab: UILabel={
+        let lab = UILabel()
+        lab.font = UIFont.boldSystemFont(ofSize: 17)
+        return lab
+    }()
+    
+    private lazy var selectedImageView: UIImageView={
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: CellSize.width, height: CellSize.height))
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor(red: 247/256.0, green: 226/256.0, blue: 26/256.0, alpha: 1) .cgColor
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
     private lazy var creatRoleNameVI: UIView={
         let coverView = UIView(frame: self.view.bounds)
         let view = UINib.init(nibName: "LYWarriorsCreatRoleNameVI", bundle: nil).instantiate(withOwner: nil, options: nil).first as! LYWarriorsCreatRoleNameVI
         coverView.addSubview(view)
-        
+        coverView.backgroundColor = UIColor.clear
         view.snp.makeConstraints { (make) in
-            make.center.equalTo(coverView)
-            //make.top.equalTo(listView.snp.bottom)
+            make.centerX.equalTo(coverView)
+            make.top.equalTo(coverView).offset(CellSize.height + 12)
             make.size.equalTo(CGSize(width: 270, height: 180))
         }
-        coverView.backgroundColor = UIColor.clear
+       
+        view.clousre = {[weak self] res in
+            if res{
+                //生成角色
+            }else{
+                
+            }
+        }
         return coverView
     }()
     
@@ -44,11 +66,15 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
         let nib = UINib(nibName: "LYWarriorsCreatRoleCell", bundle: nil)
         view.register(nib, forCellWithReuseIdentifier: LYWarriorsCreatRoleCellID)
         layout.itemSize = CellSize
-        layout.minimumLineSpacing = 6
-        layout.minimumInteritemSpacing = 6
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
         layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         view.backgroundColor = UIColor.clear
         view.dataSource = self
+        view.delegate = self
+        
+        view.addSubview(selectedImageView)
+        nameLab.text = "格斗者"
         return view
     }()
     
@@ -76,9 +102,10 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
         creatRoleBtn.layer.borderColor = UIColor.blue.cgColor
         creatRoleBtn.layer.borderWidth = 0.8
         
-        let value: CGFloat = (view.bounds.size.height - headerImageView.bounds.size.width - 38 + 6) / (CellSize.width + 6)
+        let value: CGFloat = (view.bounds.size.height - headerImageView.bounds.size.width - 38 + 5) / (CellSize.width + 5)
         count = Int(value)
         view.addSubview(listView)
+        showRoleImageView.addSubview(nameLab)
         
         listView.snp.makeConstraints { (make) in
             make.height.equalTo(CellSize.height)
@@ -97,6 +124,10 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
             make.bottom.equalTo(creatRoleBtn.snp.top).offset(-8)
             make.top.equalTo(showRoleImageView)
             make.width.equalTo(coverView.snp.height)
+        }
+        nameLab.snp.makeConstraints { (make) in
+            make.left.equalTo(showRoleImageView).offset(20)
+            make.bottom.equalTo(showRoleImageView).offset(-20)
         }
     }
     
@@ -131,5 +162,13 @@ extension LYWarriorsCreatRoleVC: SafeLayoutProtocol,UICollectionViewDelegate,UIC
             cell.professionalType = nil
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        showRoleImageView.frame = (cell?.frame)!
+//        UIView.animate(withDuration: 0.5) {
+//            self.showRoleImageView.layoutIfNeeded()
+//        }
     }
 }
