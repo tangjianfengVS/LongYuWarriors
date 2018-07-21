@@ -14,7 +14,7 @@ class LYWarriorsGameSceneVC: UIViewController {
     private var roleDefier: LYWarriorsRole!
     //MARK : 场景
     private(set) lazy var scene: LYWarriorsScene = {
-        let scenes = LYWarriorsScene(sizes: UIScreen.main.bounds.size, type: .floorType)
+        let scenes = LYWarriorsScene(sizes: UIScreen.main.bounds.size, rivalRole: roleDefier, type: .floorType)
         scenes.scaleMode = .aspectFill
         return scenes
     }()
@@ -50,6 +50,7 @@ class LYWarriorsGameSceneVC: UIViewController {
         super.viewDidLoad()
         if let skView = view as? SKView {
             skView.presentScene(scene)
+            skView.showsPhysics = true
             //skView.showsFPS = true
             //skView.showsNodeCount = true
         }
@@ -68,11 +69,52 @@ class LYWarriorsGameSceneVC: UIViewController {
         showVI.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
         }
+        if Current_Mode == Test{
+            let testBtn = UIButton()
+            let listView = LYWarriorsTestPKList(frame: .zero, style: .plain)
+            view.addSubview(testBtn)
+            view.addSubview(listView)
+            
+            testBtn.setTitle("功能测试", for: .normal)
+            testBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            testBtn.backgroundColor = UIColor.white
+            testBtn.setTitleColor(UIColor.black, for: .normal)
+            testBtn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
+            listView.backgroundColor = UIColor.white
+            listView.isHidden = true
+            
+            testBtn.snp.makeConstraints { (make) in
+                make.left.equalTo(view).offset(-20)
+                make.width.equalTo(listView)
+                make.top.equalTo(skillFunc.snp.bottom).offset(90)
+            }
+            listView.snp.makeConstraints { (make) in
+                make.left.equalTo(testBtn.snp.right).offset(70)
+                make.centerY.equalTo(testBtn)
+                make.width.equalTo(90)
+                make.height.equalTo(270)
+            }
+            testBtn.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
+            listView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
+            
+            listView.clousre = {[weak self] type in
+                self?.scene.acceptSkill(funcType: type, isMonster: true)
+            }
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
         get {
             return true
+        }
+    }
+    
+    @objc func clickBtn() {
+        for item in view.subviews {
+            if let listView = item as? LYWarriorsTestPKList{
+                listView.isHidden = !listView.isHidden
+                break
+            }
         }
     }
     

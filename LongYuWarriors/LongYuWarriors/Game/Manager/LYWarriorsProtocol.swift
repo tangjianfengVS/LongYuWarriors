@@ -42,4 +42,10 @@ extension SafeLayoutProtocol {
             appDelegate.currentVC = VC
         }
     }
+    
+    func interfaceOrientations(type: ScreenRotationType){
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+            appDelegate.allowRotation = type
+        }
+    }
 }

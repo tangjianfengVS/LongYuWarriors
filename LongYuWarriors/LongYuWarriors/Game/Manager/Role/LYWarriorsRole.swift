@@ -11,27 +11,78 @@ import UIKit
 //+ (SKPhysicsBody *)bodyWithRectangleOfSize:(CGSize)s;创建矩形的物理体
 //+ (SKPhysicsBody *)bodyWithCircleOfRadius:(CGFloat)r;创建圆形的物理体
 //+ (SKPhysicsBody *)bodyWithPolygonFromPath:(CGPathRef)path;创建自定义的物理体
+//let path = CGPath(ellipseIn: CGRect(x: (role.size.width - RolePhysicsBodySize.width)/2-10,
+//                                    y: -RolePhysicsBodySize.height/2,
+//                                width: RolePhysicsBodySize.width,
+//                               height: RolePhysicsBodySize.height), transform: nil)
+//role.physicsBody = SKPhysicsBody(edgeLoopFrom: path)
+
+
+//physicsBody属性：
+//* area:             （不可变）
+//* mass:             质量
+//* density:          密度
+//* friction:         摩擦力
+//* linearDamping:    阻力
+//* angularDamping:   角力（旋转的力 与环境有关）
+//* resitution:       势能，（碰撞效果强弱） 0.0f － 1.0f
+//* dynamic:          动态的physicsBody默认为YES，静态为NO
+//* affectedByGravity:YES接受重力影响
+//* allowsRotation:   NO 即为冻结旋转
+//
+//* force：持续的力 ，每一帧都要设置
+//* impulse:瞬时的力
+//* categoryBitMask:   标记了属于哪一类物体 默认：0xfffffffff
+//* contactTestBitMask:标记了那些物体可以与其发生碰撞，并产生影响 默认：0x00000000
+//* collisionBitMask:  标记了和那些物体可以碰撞 默认：0xfffffffff
+//* usesPreciseCollisionDetection:  提高碰撞精度
 
 class LYWarriorsRole: SKSpriteNode {
-    static let shared: LYWarriorsRole={
-        let texture = SKTexture(imageNamed: "new_stop_0001")//"goblin_idle_0001")
-        let role = LYWarriorsRole(texture: texture)
-        let physicsBodySize = CGSize(width: LimitWidth, height: role.size.height)
-        let center = CGPoint(x: (role.size.width - LimitWidth)/2, y: role.position.y)
-        role.physicsBody = SKPhysicsBody(rectangleOf: physicsBodySize, center: center)
-        //let path = CGPath(ellipseIn: CGRect(x: 0, y: 0, width: LimitWidth, height: role.size.height), transform: nil)
-        //role.physicsBody = SKPhysicsBody(edgeLoopFrom: path)//SKPhysicsBody(edgeChainFrom: path)
-        role.physicsBody?.isDynamic = true
-        role.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.masterType.rawValue)
-        role.physicsBody?.contactTestBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
+    let ShootSkillSpeed: CGFloat = 200
+    private(set) var physicsBodyCenter: CGPoint?
+    
+    static let shared: LYWarriorsRole=LYWarriorsRole(person: .swordmanPerson,personClass: .masterClass)
+//    private(set) var ATKGround: SKSpriteNode={
+//        let node = SKSpriteNode(texture: nil, size: RoleATKPhysicsSize)
+//        node.physicsBody = SKPhysicsBody(rectangleOf: RoleATKPhysicsSize)
+//        node.physicsBody?.isDynamic = false
+//        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.ATKAcceptType.rawValue)
+//        node.physicsBody?.contactTestBitMask = UInt32(LYWarriorsMarginType.ATKScopeType.rawValue)
+//        return node
+//    }()
+    
+    class func rival(dict: [String:Any]) -> LYWarriorsRole{
+        let role = LYWarriorsRole(person: .swordmanPerson, personClass: .defierClass)
         return role
-    }()
+    }
+ 
+    init(person: LYWarriorsProfessionalType, personClass: LYWarriorsPersonClass) {
+        professionalType = person
+        let texture = SKTexture(imageNamed: "new_stop_0001")
+        super.init(texture: texture, color: UIColor.cyan, size: texture.size())
+        let center = CGPoint(x: (size.width - RolePhysicsBodySize.width/2)/2, y: position.y)
+        physicsBodyCenter = center
+        physicsBody = SKPhysicsBody(rectangleOf: RolePhysicsBodySize, center: center)
+        physicsBody?.isDynamic = true
+        physicsBody?.allowsRotation = false
+        if personClass == .masterClass {
+            physicsBody?.categoryBitMask = LYWarriorsMarginType.masterType.rawValue
+        }else{
+            physicsBody?.categoryBitMask = LYWarriorsMarginType.defierType.rawValue
+        }
+        physicsBody?.contactTestBitMask = LYWarriorsMarginType.defierType.rawValue | LYWarriorsMarginType.masterType.rawValue
+        physicsBody?.collisionBitMask = LYWarriorsMarginType.marginType.rawValue
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     /*
      *  属性
      */
+    let professionalType: LYWarriorsProfessionalType!   //角色职业
     private(set) var id: String=""                             //ID
-    private(set) var personFunc: LYWarriorsPersonFunc = .unKown//角色职业
     private(set) var userName: String=""                       //名称
     private(set) var skillFuncList: [Any] = []                 //技能集合
                                                                //技能设置（快捷键）
@@ -98,6 +149,67 @@ class LYWarriorsRole: SKSpriteNode {
         let repeatForeverRun = SKAction.repeat(run, count: 1)
         self.run(repeatForeverRun) {
             self.size = SKTexture(imageNamed: "new_stop_0001").size()
+        }
+    }
+    //------------------------------------技能
+    private let shockWaveFarams: [SKTexture]={
+        let textureAtlas = SKTextureAtlas(named: "Skill")
+        var rray: [SKTexture] = []
+        for i in 1..<textureAtlas.textureNames.count{
+            let texture = textureAtlas.textureNamed(String(format:"skill_%04zd",i))
+            rray.append(texture)
+        }
+        return rray
+    }()
+    
+    func shockWave(sceneSpace: SKSpriteNode) {
+        let shootSkill = LYWarriorsShootSkill(role: self)
+        sceneSpace.addChild(shootSkill)
+        let length = sceneSpace.size.height/2 - shootSkill.toSpaceCenterSize
+        let point = CGPoint(x: position.x, y: sceneSpace.size.height/2)
+        let monsterMove = SKAction.move(to: point, duration: TimeInterval(length/ShootSkillSpeed))
+        shootSkill.run(monsterMove) {
+            shootSkill.removeFromParent()
+        }
+    }
+    
+    func levitateSkill(sceneSpace: SKSpriteNode) {
+        let levitateSkill = LYWarriorsLevitateSkill(role: self)
+        sceneSpace.addChild(levitateSkill)
+        let point = CGPoint(x: position.x, y: levitateSkill.position.y + 60)
+        let monsterMove = SKAction.move(to: point, duration: 0.2)
+        levitateSkill.run(monsterMove) {
+            levitateSkill.removeFromParent()
+        }
+    }
+    
+    func commonSkill(sceneSpace: SKSpriteNode) {
+        let commonSkill = LYWarriorsCommonSkill(role: self)
+        sceneSpace.addChild(commonSkill)
+        let point = CGPoint(x: position.x, y: commonSkill.position.y + 60)
+        let monsterMove = SKAction.move(to: point, duration: 0.2)
+        commonSkill.run(monsterMove) {
+            commonSkill.removeFromParent()
+        }
+    }
+    
+    func outrangebrakeSkill(sceneSpace: SKSpriteNode) {
+        let outrangebrakeSkill = LYWarriorsOutrangebrakeSkill(role: self)
+        sceneSpace.addChild(outrangebrakeSkill)
+        let point = CGPoint(x: outrangebrakeSkill.position.x, y: outrangebrakeSkill.position.y + 40)
+        let monsterMove = SKAction.move(to: point, duration: 1)
+        outrangebrakeSkill.run(monsterMove) {
+            outrangebrakeSkill.removeFromParent()
+        }
+    }
+    
+    func drawingChopSkill(sceneSpace: SKSpriteNode) {
+        let drawingChopSkill = LYWarriorsDrawingChopSkill(role: self)
+        sceneSpace.addChild(drawingChopSkill)
+        let point = CGPoint(x: drawingChopSkill.position.x, y: drawingChopSkill.position.y)
+        let monsterMove = SKAction.move(to: point, duration: 1)
+        drawingChopSkill.run(monsterMove) {
+            drawingChopSkill.removeFromParent()
         }
     }
 }

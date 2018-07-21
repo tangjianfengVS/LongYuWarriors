@@ -8,16 +8,27 @@
 
 import UIKit
 
+enum ActionActionType {
+    case creatRoleType
+    case beginGameType
+}
+
 class LYWarriorsActionView: UIView {
-    var clouse: (()->())?
+    var clouse: ((ActionActionType)->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    @IBAction func clickCreatRoleBtn(_ sender: UIButton) {
+        if clouse != nil {
+            clouse!(.creatRoleType)
+        }
+    }
+    
     @IBAction func clickBeginGame(_ sender: UIButton) {
         if clouse != nil {
-            clouse!()
+            clouse!(.beginGameType)
         }
     }
 }

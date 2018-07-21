@@ -12,6 +12,6 @@ class LYWarriorsDuelDetailVM: NSObject {
 
     func search(type: LYWarriorsCoreFunc, clousre: (Bool,LYWarriorsRole?)->()) {
         
-        clousre(true,LYWarriorsRole(texture: nil, color: UIColor.cyan, size: CGSize.zero))
+        clousre(true,LYWarriorsRole(person: .grapplePerson, personClass: .defierClass))
     }
 }

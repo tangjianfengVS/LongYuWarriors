@@ -32,6 +32,9 @@
                     <color key="backgroundColor" red="0.78974099330000003" green="0.91001325109999998" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="创建角色"/>
+                    <connections>
+                        <action selector="clickCreatRoleBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="1DD-iw-y2T"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niq-Hx-5Js">
                     <rect key="frame" x="319" y="15" width="54" height="28"/>

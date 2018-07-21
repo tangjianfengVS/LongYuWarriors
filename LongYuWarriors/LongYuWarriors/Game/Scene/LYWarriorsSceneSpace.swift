@@ -21,7 +21,8 @@ class LYWarriorsSceneSpace: SKSpriteNode {
         node.position = CGPoint(x: -ScreenWidth/2, y: 0)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.topCrashType.rawValue)
+        //node.physicsBody?.categoryBitMask = LYWarriorsMarginType.marginType.rawValue
+        physicsBody?.collisionBitMask = LYWarriorsMarginType.masterType.rawValue | LYWarriorsMarginType.defierType.rawValue
         return node
     }()
     private lazy  var rightNode: SKSpriteNode={
@@ -30,7 +31,8 @@ class LYWarriorsSceneSpace: SKSpriteNode {
         node.position = CGPoint(x: -(ScreenWidth - size.width)/2, y: (size.height + SpaceOffsetSize.height)/2)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
+        //node.physicsBody?.categoryBitMask = LYWarriorsMarginType.marginType.rawValue
+        physicsBody?.collisionBitMask = LYWarriorsMarginType.masterType.rawValue | LYWarriorsMarginType.defierType.rawValue
         return node
     }()
     private lazy var bottomNode: SKSpriteNode={
@@ -39,7 +41,8 @@ class LYWarriorsSceneSpace: SKSpriteNode {
         node.position = CGPoint(x: (size.width + SpaceOffsetSize.width)/2, y: 0)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
+        //node.physicsBody?.categoryBitMask = LYWarriorsMarginType.marginType.rawValue
+        physicsBody?.collisionBitMask = LYWarriorsMarginType.masterType.rawValue | LYWarriorsMarginType.defierType.rawValue
         return node
     }()
     private lazy  var leftNode: SKSpriteNode={
@@ -48,7 +51,8 @@ class LYWarriorsSceneSpace: SKSpriteNode {
         node.position = CGPoint(x: -(ScreenWidth - size.width)/2, y: -(size.height + SpaceOffsetSize.height)/2)
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = UInt32(LYWarriorsMarginType.marginType.rawValue)
+        //node.physicsBody?.categoryBitMask = LYWarriorsMarginType.marginType.rawValue
+        physicsBody?.collisionBitMask = LYWarriorsMarginType.masterType.rawValue | LYWarriorsMarginType.defierType.rawValue
         return node
     }()
     

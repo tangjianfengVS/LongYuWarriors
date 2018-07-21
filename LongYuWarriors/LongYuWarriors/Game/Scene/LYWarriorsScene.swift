@@ -17,7 +17,8 @@ class LYWarriorsScene: SKScene {
                                              y: (sceneSpace.size.height - size.height)/2 + SpaceOffsetSize.height)
     //MARK : 人物
     let monster = LYWarriorsRole.shared
-    
+    //MARK : rival
+    let rival: LYWarriorsRole!
     //MARK : 摇杆
     private var isJoystickTouchEnded: Bool=true
     private lazy var Joystick: LYWarriorsJoystick = {
@@ -34,8 +35,9 @@ class LYWarriorsScene: SKScene {
         return space
     }()
     
-    init(sizes: CGSize, type: LYWarriorSpaceType) {
+    init(sizes: CGSize, rivalRole: LYWarriorsRole, type: LYWarriorSpaceType) {
         spaceType = type
+        rival = rivalRole
         super.init(size: sizes)
         size = sizes
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -50,8 +52,10 @@ class LYWarriorsScene: SKScene {
         isUserInteractionEnabled = true
         addChild(sceneSpace)
         sceneSpace.addChild(monster)
+        sceneSpace.addChild(rival)
         addChild(Joystick)
-        monster.position = CGPoint(x: 0, y: -size.height/2+100)
+        monster.position = CGPoint(x: 0-RolePhysicsBodySize.width-20, y: -size.height/2+100)
+        rival.position = CGPoint(x: 0-RolePhysicsBodySize.width-20, y:0)
         Joystick.position = CGPoint(x: frame.maxX - Joystick.size.width/2 - 10, y: Joystick.size.width/2 + 10)
     }
 
@@ -106,9 +110,8 @@ class LYWarriorsScene: SKScene {
     }
 }
 
-extension LYWarriorsScene: LYWarriorsJoystickProtocol{
+extension LYWarriorsScene: LYWarriorsJoystickProtocol,SKPhysicsContactDelegate{
     func joystickBegan(Joystick: LYWarriorsJoystick, touches: Set<UITouch>, event: UIEvent) {
-        
     }
     
     func joystickCanceled(Joystick: LYWarriorsJoystick, touches: Set<UITouch>, event: UIEvent) {
@@ -141,14 +144,56 @@ extension LYWarriorsScene: LYWarriorsJoystickProtocol{
         isJoystickTouchEnded = true
         monster.idle()
     }
-}
-
-extension LYWarriorsScene: SKPhysicsContactDelegate{
+    
     func didBegin(_ contact: SKPhysicsContact) {
         print("碰撞中...")
-    }
+        let contactMaskA = contact.bodyA.categoryBitMask
+        let contactMaskB = contact.bodyB.categoryBitMask
 
+//        if contactMaskA == LYWarriorsMarginType.masterType.rawValue {
+//            if let skill = contact.bodyB. as? LYWarriorsSkill{
+//                if skill.roleLYW == contact.bodyA{
+//                    return
+//                }
+//            }
+//        }else if contactMaskB == LYWarriorsMarginType.masterType.rawValue {
+//
+//
+//        }
+//        switch(contactMask) {
+//        case BodyType.player.rawValue | BodyType.enemy.rawValue:
+//            let secondNode = contact.bodyB.node
+//            secondNode?.removeFromParent()
+//            let firstNode = contact.bodyA.node
+//            firstNode?.removeFromParent()
+//        default:
+//            return
+//        }
+    }
+    
     func didEnd(_ contact: SKPhysicsContact) {
         print("碰撞结束...",contact.contactPoint,contact.contactNormal)
+    }
+}
+
+extension LYWarriorsScene {
+    func acceptSkill(funcType: LYWarriorsSkillFunc,isMonster: Bool) {
+        if isMonster {
+            switch funcType{
+            case .raiseHType:
+                monster.commonSkill(sceneSpace: sceneSpace)
+            case .raiseBType:
+                monster.levitateSkill(sceneSpace: sceneSpace)
+            case .raiseCType:
+                monster.shockWave(sceneSpace: sceneSpace)
+            case .raiseEType:
+                monster.outrangebrakeSkill(sceneSpace: sceneSpace)
+            case .raiseFType:
+                monster.drawingChopSkill(sceneSpace: sceneSpace)
+            default: break
+            }
+        }else{
+            
+        }
     }
 }

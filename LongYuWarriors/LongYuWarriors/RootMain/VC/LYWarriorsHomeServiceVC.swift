@@ -9,10 +9,10 @@
 import UIKit
 
 let ServiceViewWidth: CGFloat=335
-class LYWarriorsHomeServiceVC: UIViewController {
+class LYWarriorsHomeServiceVC: LYWarriorsBaseNormalFuncVC {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var brandImageView: UIImageView!
-    
+
     var block: ((CGSize)->())!
     
     lazy var serviceView: LYWarriorsHomeServiceVI={
@@ -49,13 +49,13 @@ class LYWarriorsHomeServiceVC: UIViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func clickBeginGame(_ sender: UIButton) {
         present(LYWarriorsLoginVC(), animated: true, completion: nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     deinit {

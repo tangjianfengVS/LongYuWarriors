@@ -30,7 +30,7 @@ class LYWarriorsDuelBeginShowVI: UIView {
                 self.defierImageView.transform = .identity
                 self.vsImageView.alpha = 1
             }) { (_) in
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.2) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.8) {
                     if self.clousre != nil{
                         self.clousre!()
                     }

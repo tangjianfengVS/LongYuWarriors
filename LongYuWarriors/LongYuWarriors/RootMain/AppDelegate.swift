@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private(set) var safeSize: CGSize = .zero
     var currentVC: UIViewController?
+    var allowRotation: ScreenRotationType = .all
     
     lazy var backBtn: UIButton = {
         let btn = UIButton(frame: CGRect(x: 35, y: 10, width: 40, height: 40))
@@ -44,6 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = VC
         }
         setBackUI()
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        switch allowRotation {
+        case .left:
+            return .landscapeLeft
+        case .right:
+            return .landscapeRight
+        case .portrait:
+            return .portrait
+        default:
+            break
+        }
+        return UIInterfaceOrientationMask.all
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LYWarriorsLoginVC: UIViewController{
+class LYWarriorsLoginVC: LYWarriorsBaseNormalFuncVC{
     @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var loginBtn: UIButton!

@@ -8,14 +8,13 @@
 
 import UIKit
 
-class LYWarriorsChoosegRoleVC: UIViewController {
+class LYWarriorsChoosegRoleVC: LYWarriorsBaseFuncVC {
     private let LYWarriorsInterfaceCellID = "LYWarriorsInterfaceCellID"
     private let count: CGFloat = 4
     private let insetsWidth: CGFloat = 8
     private let roleListLeftSize: CGFloat = 15
     private let itemSize: CGSize = CGSize(width: 112, height: 180)
     private let choosegRoleVM = LYWarriorsChoosegRoleVM()
-    var safeGaugeSize: (CGFloat,CGFloat)=(0,0)
     
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var coverView: UIView!
@@ -25,7 +24,7 @@ class LYWarriorsChoosegRoleVC: UIViewController {
     private var delegate: SafeLayoutProtocol?{
         didSet{
             delegate?.safeLayoutSize(top: topLayout, bottom: bottomLayout)
-            safeGaugeSize = (delegate?.safeLayoutGaugeSize())!
+            delegate?.interfaceOrientations(type: .left)
         }
     }
     
@@ -56,8 +55,14 @@ class LYWarriorsChoosegRoleVC: UIViewController {
     
     lazy var actionView: LYWarriorsActionView={
         let view = UINib.init(nibName: "LYWarriorsActionView", bundle: nil).instantiate(withOwner: nil, options: nil).first as! LYWarriorsActionView
-        view.clouse = { 
-            NotificationCenter.default.post(name: NSNotification.Name.init(LYWarriorsUpdateRootNotif), object: LYWarriorsHomeSceneVC(), userInfo: nil)
+        view.clouse = {[weak self] type in
+            if type == .creatRoleType{
+                self?.present(LYWarriorsCreatRoleVC(clousre: {
+                    
+                }), animated: true, completion: nil)
+            }else if type == .beginGameType{
+                NotificationCenter.default.post(name: NSNotification.Name.init(LYWarriorsUpdateRootNotif), object: LYWarriorsHomeSceneVC(), userInfo: nil)
+            }
         }
         return view
     }()
@@ -70,15 +75,9 @@ class LYWarriorsChoosegRoleVC: UIViewController {
         coverView.addSubview(roleList)
         coverView.addSubview(adscapeView)
         coverView.addSubview(actionView)
-        coverView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
-        
-        let offset = safeGaugeSize.0 > 20 ? safeGaugeSize.0-safeGaugeSize.1:0
-        let offsetWidth = safeGaugeSize.0 > 20 ? -safeGaugeSize.0:0
+
         coverView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(showImageView).offset(offset)
-            make.centerX.equalTo(showImageView)
-            make.width.equalTo(showImageView.snp.height).offset(offsetWidth)
-            make.height.equalTo(showImageView.snp.width)
+            make.edges.equalTo(view)
         }
         labView.snp.makeConstraints { (make) in
             make.top.equalTo(coverView).offset(5)
@@ -103,12 +102,7 @@ class LYWarriorsChoosegRoleVC: UIViewController {
             make.width.equalTo(140)
             make.bottom.equalTo(coverView).offset(-30)
         }
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        
     }
     
     private func loadData(){
