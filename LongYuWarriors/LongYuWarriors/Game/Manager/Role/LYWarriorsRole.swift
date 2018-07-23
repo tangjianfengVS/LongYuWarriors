@@ -41,6 +41,13 @@ class LYWarriorsRole: SKSpriteNode {
     let ShootSkillSpeed: CGFloat = 200
     private(set) var physicsBodyCenter: CGPoint?
     
+    class func shared(dict: [String:Any])-> Bool {
+    
+        let role = LYWarriorsRole.shared
+        //设置属性
+        return true
+    }
+    
     static let shared: LYWarriorsRole=LYWarriorsRole(person: .swordmanPerson,personClass: .masterClass)
 //    private(set) var ATKGround: SKSpriteNode={
 //        let node = SKSpriteNode(texture: nil, size: RoleATKPhysicsSize)
@@ -79,7 +86,7 @@ class LYWarriorsRole: SKSpriteNode {
     }
     
     /*
-     *  属性
+     *  属性---------------------------------------
      */
     let professionalType: LYWarriorsProfessionalType!   //角色职业
     private(set) var id: String=""                             //ID
@@ -98,6 +105,7 @@ class LYWarriorsRole: SKSpriteNode {
             print(direction ? "调头--进":"调头--退")
         }
     }
+    //--------------------------------------------
     
     private let idleFarams: [SKTexture]={
         let textureAtlas = SKTextureAtlas(named: "New_stop")

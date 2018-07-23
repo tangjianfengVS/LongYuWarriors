@@ -19,6 +19,7 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
     private let CellSize = CGSize(width: 60, height: 100)
     private let callBack: (()->())!
     private var count: Int=0
+    private let roleVM = LYWarriorsChoosegRoleVM()
     
     private lazy var professionalList: [LYWarriorsProfessionalType]={
         return LYWarriorsProfessionalType.allValues
@@ -50,11 +51,22 @@ class LYWarriorsCreatRoleVC: LYWarriorsBaseFuncVC {
             make.size.equalTo(CGSize(width: 270, height: 180))
         }
        
-        view.clousre = {[weak self] res in
-            if res{
-                //生成角色
-            }else{
-                
+        view.clousre = {[weak self] type in
+            if type == .verifyType{
+                self?.roleVM.createRole(name: view.nameText.text,
+                                        professionalType: LYWarriorsProfessionalType(rawValue: (self?.nameLab.text)!)!,
+                                        clousre: { (res) in
+                    if res{
+                        self?.callBack()
+                        self?.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }else if type == .searchType{
+                self?.roleVM.createName(roleName: view.nameText.text!, clousre: { (res) in
+                    view.verifyBtn.isEnabled = res
+                })
+            }else if type == .cancelType{
+                coverView.removeFromSuperview()
             }
         }
         return coverView
@@ -165,10 +177,10 @@ extension LYWarriorsCreatRoleVC: SafeLayoutProtocol,UICollectionViewDelegate,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        showRoleImageView.frame = (cell?.frame)!
-//        UIView.animate(withDuration: 0.5) {
-//            self.showRoleImageView.layoutIfNeeded()
-//        }
+        let cellX = collectionView.cellForItem(at: indexPath)?.frame.origin.x
+        let offsetX = cellX! - selectedImageView.frame.origin.x
+        UIView.animate(withDuration: 0.5) {
+            self.selectedImageView.transform = CGAffineTransform(translationX: offsetX, y: 0).concatenating(self.selectedImageView.transform)
+        }
     }
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import SVProgressHUD
 
 class LYWarriorsBluetoothManager: NSObject{
     fileprivate(set) var peripheralArray: [LYWarriorsBCBPeripheral] = []
@@ -179,7 +178,7 @@ extension LYWarriorsBluetoothManager: CBCentralManagerDelegate, CBPeripheralDele
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         peripheralConnect?.isConnect = false
         peripheralConnect = nil
-        SVProgressHUD.showError(withStatus: "当前连接失败!")
+        //SVProgressHUD.showError(withStatus: "当前连接失败!")
         if connectClouse != nil {
             connectClouse!()
         }

@@ -10,4 +10,8 @@ import UIKit
 
 class LYWarriorsUserInfo: NSObject {
 
+    static let shared = LYWarriorsUserInfo()
+    
+    private(set) var userId: String="00000000001ss1"
+    
 }

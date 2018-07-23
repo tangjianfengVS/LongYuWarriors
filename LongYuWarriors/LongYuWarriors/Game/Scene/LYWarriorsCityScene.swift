@@ -21,8 +21,7 @@ class LYWarriorsCityScene: SKScene {
     //MARK : 背景
     private lazy var sceneSpace: LYWarriorsCitySceneSpace = {
         let space = LYWarriorsCitySceneSpace(type: spaceType)
-        space.position = CGPoint(x: size.width/2 + (size.width - space.size.width)/2, y: size.height/2)
-        
+        space.position = CGPoint(x: self.size.width/2, y: space.size.height/2)
         space.closure = {[weak self] (aimPoint)in
             let interval = TimeInterval.moveTime(aimPoint: aimPoint, monsterPoint: (self?.monster.position)!)
             self?.moveFiltration(aimPoint: aimPoint, interval: interval)

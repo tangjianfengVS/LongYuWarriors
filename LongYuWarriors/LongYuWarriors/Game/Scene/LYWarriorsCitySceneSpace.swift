@@ -41,14 +41,13 @@ class LYWarriorsCitySceneSpace: SKSpriteNode {
     init(type: LYWarriorSpaceType) {
         spaceType = type
         let texture = SKTexture(imageNamed: "Snip20180610_3")
-        super.init(texture: texture, color: UIColor.cyan, size: CGSize(width: ScreenWidth/2, height: 950))
+        super.init(texture: texture, color: UIColor.cyan, size: CGSize(width: 950, height: ScreenWidth/2))
         isUserInteractionEnabled = true
         setupUI()
     }
     
     private func setupUI(){
         addChild(bottomNode)
-        
     }
     
     func touch(center: CGPoint) {

@@ -16,6 +16,7 @@
 		7E06E6602101D16900BC2EA5 /* LYWarriorsCreatRoleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E06E65E2101D16900BC2EA5 /* LYWarriorsCreatRoleCell.xib */; };
 		7E06E6622102298C00BC2EA5 /* LYWarriorsCreatRoleNameVI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06E6612102298C00BC2EA5 /* LYWarriorsCreatRoleNameVI.swift */; };
 		7E06E6642102299500BC2EA5 /* LYWarriorsCreatRoleNameVI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E06E6632102299500BC2EA5 /* LYWarriorsCreatRoleNameVI.xib */; };
+		7E06E6662103671700BC2EA5 /* LYWarriorsRoleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06E6652103671700BC2EA5 /* LYWarriorsRoleInterface.swift */; };
 		7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0828E820B1AEAC0070070D /* AppDelegate.swift */; };
 		7E08293020B1B4230070070D /* LYWarriorsRootMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E08292E20B1B4230070070D /* LYWarriorsRootMainVC.xib */; };
 		7E08293120B1B4230070070D /* LYWarriorsRootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08292F20B1B4230070070D /* LYWarriorsRootMainVC.swift */; };
@@ -28,6 +29,10 @@
 		7E09A5532100C0BC00BB91E4 /* LYWarriorsOutrangebrakeSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09A5522100C0BC00BB91E4 /* LYWarriorsOutrangebrakeSkill.swift */; };
 		7E09A5552100C6DC00BB91E4 /* LYWarriorsDrawingChopSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09A5542100C6DC00BB91E4 /* LYWarriorsDrawingChopSkill.swift */; };
 		7E0A72B320FB41D600135A4B /* LYWarriorsLevitateSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A72B220FB41D600135A4B /* LYWarriorsLevitateSkill.swift */; };
+		7E0BB4C9210447FC00330EDB /* LYWarriorsFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BB4C8210447FC00330EDB /* LYWarriorsFMDBManager.swift */; };
+		7E0BB4CB2104804A00330EDB /* LYWarriorsHomeShowLoadVI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BB4CA2104804A00330EDB /* LYWarriorsHomeShowLoadVI.swift */; };
+		7E0BB4CD2104805800330EDB /* LYWarriorsHomeShowLoadVI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0BB4CC2104805800330EDB /* LYWarriorsHomeShowLoadVI.xib */; };
+		7E0BB4CF210481E800330EDB /* LYWarriorsHomeDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BB4CE210481E800330EDB /* LYWarriorsHomeDetailVM.swift */; };
 		7E0BDC3720B5B3370060B1BC /* LYWarriorsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BDC3620B5B3370060B1BC /* LYWarriorsScene.swift */; };
 		7E0BE48C20CD0D25009952CF /* LYWarriorsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BE48B20CD0D25009952CF /* LYWarriorsConfiguration.swift */; };
 		7E0BE48F20CD0F40009952CF /* LYWarriorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BE48E20CD0F40009952CF /* LYWarriorsExtension.swift */; };
@@ -103,6 +108,7 @@
 		7E06E65E2101D16900BC2EA5 /* LYWarriorsCreatRoleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsCreatRoleCell.xib; sourceTree = "<group>"; };
 		7E06E6612102298C00BC2EA5 /* LYWarriorsCreatRoleNameVI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsCreatRoleNameVI.swift; sourceTree = "<group>"; };
 		7E06E6632102299500BC2EA5 /* LYWarriorsCreatRoleNameVI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsCreatRoleNameVI.xib; sourceTree = "<group>"; };
+		7E06E6652103671700BC2EA5 /* LYWarriorsRoleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsRoleInterface.swift; sourceTree = "<group>"; };
 		7E0828E820B1AEAC0070070D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E08292E20B1B4230070070D /* LYWarriorsRootMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYWarriorsRootMainVC.xib; sourceTree = "<group>"; };
 		7E08292F20B1B4230070070D /* LYWarriorsRootMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYWarriorsRootMainVC.swift; sourceTree = "<group>"; };
@@ -116,6 +122,10 @@
 		7E09A5522100C0BC00BB91E4 /* LYWarriorsOutrangebrakeSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsOutrangebrakeSkill.swift; sourceTree = "<group>"; };
 		7E09A5542100C6DC00BB91E4 /* LYWarriorsDrawingChopSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsDrawingChopSkill.swift; sourceTree = "<group>"; };
 		7E0A72B220FB41D600135A4B /* LYWarriorsLevitateSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsLevitateSkill.swift; sourceTree = "<group>"; };
+		7E0BB4C8210447FC00330EDB /* LYWarriorsFMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsFMDBManager.swift; sourceTree = "<group>"; };
+		7E0BB4CA2104804A00330EDB /* LYWarriorsHomeShowLoadVI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsHomeShowLoadVI.swift; sourceTree = "<group>"; };
+		7E0BB4CC2104805800330EDB /* LYWarriorsHomeShowLoadVI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYWarriorsHomeShowLoadVI.xib; sourceTree = "<group>"; };
+		7E0BB4CE210481E800330EDB /* LYWarriorsHomeDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsHomeDetailVM.swift; sourceTree = "<group>"; };
 		7E0BDC3620B5B3370060B1BC /* LYWarriorsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsScene.swift; sourceTree = "<group>"; };
 		7E0BE48B20CD0D25009952CF /* LYWarriorsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsConfiguration.swift; sourceTree = "<group>"; };
 		7E0BE48E20CD0F40009952CF /* LYWarriorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWarriorsExtension.swift; sourceTree = "<group>"; };
@@ -193,6 +203,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E06E66721036DAF00BC2EA5 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		7E0828E720B1AE3D0070070D /* RootMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +288,7 @@
 				7E0BE49020CD3CFF009952CF /* Skill */,
 				7E0BE48B20CD0D25009952CF /* LYWarriorsConfiguration.swift */,
 				7E43A6BA20F485BF007B0767 /* LYWarriorsProtocol.swift */,
+				7E0BB4C8210447FC00330EDB /* LYWarriorsFMDBManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -302,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0BE49820CD3D16009952CF /* LYWarriorsRole.swift */,
+				7E06E6652103671700BC2EA5 /* LYWarriorsRoleInterface.swift */,
 			);
 			path = Role;
 			sourceTree = "<group>";
@@ -317,6 +336,8 @@
 		7E0D192F20F5DA170041DC8E /* VI */ = {
 			isa = PBXGroup;
 			children = (
+				7E0BB4CA2104804A00330EDB /* LYWarriorsHomeShowLoadVI.swift */,
+				7E0BB4CC2104805800330EDB /* LYWarriorsHomeShowLoadVI.xib */,
 				7E0D193020F5DA540041DC8E /* LYWarriorsCityTopActionVI.swift */,
 				7E0D193220F5DA5E0041DC8E /* LYWarriorsCityTopActionVI.xib */,
 				7E0D193820F5E7430041DC8E /* LYWarriorsDuelDetailFuncVI.swift */,
@@ -341,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0D194020F601B70041DC8E /* LYWarriorsDuelDetailVM.swift */,
+				7E0BB4CE210481E800330EDB /* LYWarriorsHomeDetailVM.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -374,6 +396,7 @@
 		7E0D668F20ADC89800726F4D /* LongYuWarriors */ = {
 			isa = PBXGroup;
 			children = (
+				7E06E66721036DAF00BC2EA5 /* Music */,
 				7E0D017420F8937900B620F8 /* Skill.atlas */,
 				7E0D192D20F5ADE10041DC8E /* Touch.atlas */,
 				7EDE434A20D798F700561069 /* New_raise.atlas */,
@@ -537,6 +560,7 @@
 				7E08293020B1B4230070070D /* LYWarriorsRootMainVC.xib in Resources */,
 				7E0D194820F60BFA0041DC8E /* LYWarriorsDuelBeginShowVI.xib in Resources */,
 				7E7F7D8320F0C1D8005C0355 /* LYWarriorsActionView.xib in Resources */,
+				7E0BB4CD2104805800330EDB /* LYWarriorsHomeShowLoadVI.xib in Resources */,
 				7EDE434B20D798F800561069 /* New_raise.atlas in Resources */,
 				7E74733820BAA30000665FAC /* LYWarriorsBluetoothCell.xib in Resources */,
 				7EDE434720D76EAB00561069 /* New_stop.atlas in Resources */,
@@ -595,12 +619,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-LongYuWarriors/Pods-LongYuWarriors-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +650,7 @@
 				7E0828E920B1AEAC0070070D /* AppDelegate.swift in Sources */,
 				7E7F7D7C20F0AFCF005C0355 /* LYWarriorsChoosegRoleVM.swift in Sources */,
 				7E0D669720ADC89800726F4D /* GameScene.swift in Sources */,
+				7E06E6662103671700BC2EA5 /* LYWarriorsRoleInterface.swift in Sources */,
 				7E0A72B320FB41D600135A4B /* LYWarriorsLevitateSkill.swift in Sources */,
 				7E74733A20BAC14000665FAC /* LYWarriorsBCBPeripheral.swift in Sources */,
 				7E0BE49920CD3D16009952CF /* LYWarriorsRole.swift in Sources */,
@@ -650,6 +677,7 @@
 				7E0D017320F84E1A00B620F8 /* LYWarriorsTestPKList.swift in Sources */,
 				7E0D194620F60BEE0041DC8E /* LYWarriorsDuelBeginShowVI.swift in Sources */,
 				7E06E6622102298C00BC2EA5 /* LYWarriorsCreatRoleNameVI.swift in Sources */,
+				7E0BB4CB2104804A00330EDB /* LYWarriorsHomeShowLoadVI.swift in Sources */,
 				7E74733720BAA30000665FAC /* LYWarriorsBluetoothCell.swift in Sources */,
 				7E0C213220ECADF4002FA7E9 /* LYWarriorsChoosegRoleVC.swift in Sources */,
 				7E0D194120F601B80041DC8E /* LYWarriorsDuelDetailVM.swift in Sources */,
@@ -657,9 +685,11 @@
 				7E43A6B920F45D1F007B0767 /* LYWarriorsCitySceneSpace.swift in Sources */,
 				7E06E65F2101D16900BC2EA5 /* LYWarriorsCreatRoleCell.swift in Sources */,
 				7E09738220E9C8AE00F86A39 /* LYWarriorsHomeServiceVI.swift in Sources */,
+				7E0BB4C9210447FC00330EDB /* LYWarriorsFMDBManager.swift in Sources */,
 				7ED0D90020E07C9E00970FD5 /* LYWarriorsSceneSpace.swift in Sources */,
 				7E43A6B720F458FE007B0767 /* LYWarriorsCityScene.swift in Sources */,
 				7E7F7D8120F0C1CA005C0355 /* LYWarriorsActionView.swift in Sources */,
+				7E0BB4CF210481E800330EDB /* LYWarriorsHomeDetailVM.swift in Sources */,
 				7E09A5512100BEB900BB91E4 /* LYWarriorsCommonSkill.swift in Sources */,
 				7E08293520B1B4780070070D /* LYWarriorsInterfaceCell.swift in Sources */,
 				7EC7EDBB20E90BFB000E9620 /* LYWarriorsHomeServiceVC.swift in Sources */,

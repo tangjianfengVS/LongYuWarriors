@@ -15,6 +15,7 @@ class LYWarriorsChoosegRoleVC: LYWarriorsBaseFuncVC {
     private let roleListLeftSize: CGFloat = 15
     private let itemSize: CGSize = CGSize(width: 112, height: 180)
     private let choosegRoleVM = LYWarriorsChoosegRoleVM()
+    private var selectedIndex: IndexPath?
     
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var coverView: UIView!
@@ -58,10 +59,13 @@ class LYWarriorsChoosegRoleVC: LYWarriorsBaseFuncVC {
         view.clouse = {[weak self] type in
             if type == .creatRoleType{
                 self?.present(LYWarriorsCreatRoleVC(clousre: {
-                    
+                    self?.loadData()
                 }), animated: true, completion: nil)
             }else if type == .beginGameType{
-                NotificationCenter.default.post(name: NSNotification.Name.init(LYWarriorsUpdateRootNotif), object: LYWarriorsHomeSceneVC(), userInfo: nil)
+                if self?.selectedIndex != nil{
+                    let cell = self?.roleList.cellForItem(at: (self?.selectedIndex)!) as! LYWarriorsInterfaceCell
+                    NotificationCenter.default.post(name: NSNotification.Name.init(LYWarriorsUpdateRootNotif), object: LYWarriorsHomeSceneVC(roleInterfaces: cell.roleInterface!), userInfo: nil)
+                }
             }
         }
         return view
@@ -102,11 +106,12 @@ class LYWarriorsChoosegRoleVC: LYWarriorsBaseFuncVC {
             make.width.equalTo(140)
             make.bottom.equalTo(coverView).offset(-30)
         }
-        
+        loadData()
     }
     
     private func loadData(){
-        
+        choosegRoleVM.searchRoleInterface()
+        roleList.reloadData()
     }
     
     deinit {
@@ -120,16 +125,24 @@ class LYWarriorsChoosegRoleVC: LYWarriorsBaseFuncVC {
 
 extension LYWarriorsChoosegRoleVC: UICollectionViewDataSource,UICollectionViewDelegate,SafeLayoutProtocol{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return choosegRoleVM.roleInterfaceList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LYWarriorsInterfaceCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LYWarriorsInterfaceCellID, for: indexPath) as! LYWarriorsInterfaceCell
+        cell.roleInterface = choosegRoleVM.roleInterfaceList[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let VC = LYWarriorsWorkDetailVC()
-        //present(VC, animated: true, completion: nil)
+        if selectedIndex != nil {
+            let cellOld = collectionView.cellForItem(at: selectedIndex!) as! LYWarriorsInterfaceCell
+            cellOld.layer.borderColor = UIColor.clear.cgColor
+            cellOld.layer.borderWidth = 2
+        }
+        selectedIndex = indexPath
+        let cell = collectionView.cellForItem(at: indexPath) as! LYWarriorsInterfaceCell
+        cell.layer.borderColor = UIColor.blue.cgColor
+        cell.layer.borderWidth = 2
     }
 }

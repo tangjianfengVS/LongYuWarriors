@@ -8,7 +8,8 @@ project 'LongYuWarriors/LongYuWarriors.xcodeproj'
 target 'LongYuWarriors' do
   project 'LongYuWarriors/LongYuWarriors.xcodeproj'
   pod 'SnapKit'
-  pod 'SVProgressHUD'
+  pod 'FMDB'
+  pod 'MBProgressHUD'
 end
 
 target 'LYService' do

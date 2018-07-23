@@ -10,11 +10,18 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class LYWarriorsHomeSceneVC: UIViewController {
+class LYWarriorsHomeSceneVC: LYWarriorsBaseFuncVC {
     private var safeGaugeSize: (CGFloat,CGFloat)=(0,0)
+    private let roleInterface: LYWarriorsRoleInterface!
+    private let homeDetailVM = LYWarriorsHomeDetailVM()
+    
+    private lazy var showLoadVI: LYWarriorsHomeShowLoadVI={
+        let view = UINib.init(nibName: "LYWarriorsHomeShowLoadVI", bundle: nil).instantiate(withOwner: nil, options: nil).first as! LYWarriorsHomeShowLoadVI
+        return view
+    }()
     
     private lazy var scene: LYWarriorsCityScene={
-        let scenes = LYWarriorsCityScene(sizes: UIScreen.main.bounds.size, type: .floorType)
+        let scenes = LYWarriorsCityScene(sizes: CGSize(width: ScreenHeight, height: ScreenWidth), type: .floorType)
         scenes.scaleMode = .aspectFill
         return scenes
     }()
@@ -35,34 +42,52 @@ class LYWarriorsHomeSceneVC: UIViewController {
     
     private var delegate: SafeLayoutProtocol?{
         didSet{
-            safeGaugeSize = (delegate?.safeLayoutGaugeSize())!
+            //safeGaugeSize = (delegate?.safeLayoutGaugeSize())!
+            delegate?.interfaceOrientations(type: .portrait)
         }
+    }
+    
+    init(roleInterfaces: LYWarriorsRoleInterface) {
+        roleInterface = roleInterfaces
+        super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let skView = view as? SKView {
-            skView.presentScene(scene)
-        }
         delegate = self
-        setupUI()
+        view.addSubview(showLoadVI)
+        loadData()
+        
+        showLoadVI.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
     }
     
     private func setupUI() {
+        if let skView = view as? SKView {
+            skView.presentScene(scene)
+        }
         view.addSubview(actionVI)
-        
+
         actionVI.snp.makeConstraints { (make) in
-            make.left.equalTo(view)
-            make.top.equalTo(view).offset(safeGaugeSize.0)
-            make.bottom.equalTo(view).offset(-safeGaugeSize.1)
-            make.width.equalTo(100)
+            make.left.right.top.equalTo(view)
+            //make.top.equalTo(view).offset(safeGaugeSize.0)
+            //make.bottom.equalTo(view).offset(-safeGaugeSize.1)
+            make.height.equalTo(70)
         }
     }
     
-    override var prefersStatusBarHidden: Bool {
-        get {
-            return true
+    private func loadData(){
+        homeDetailVM.synchronization(roleInterface: roleInterface) {[weak self] (res) in
+            if res{
+                self?.showLoadVI.removeFromSuperview()
+                self?.setupUI()
+            }
         }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func didReceiveMemoryWarning() {

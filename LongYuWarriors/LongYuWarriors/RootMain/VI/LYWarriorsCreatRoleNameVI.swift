@@ -8,12 +8,17 @@
 
 import UIKit
 
+enum CreatRoleNameType {
+    case verifyType
+    case cancelType
+    case searchType
+}
+
 class LYWarriorsCreatRoleNameVI: UIView {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var verifyBtn: UIButton!
-    
-    var clousre: ((Bool)->())?
+    var clousre: ((CreatRoleNameType)->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +26,21 @@ class LYWarriorsCreatRoleNameVI: UIView {
         nameText.delegate = self
     }
     
+    @IBAction func clickSearchName(_ sender: UIButton) {
+        if clousre != nil {
+            clousre!(.searchType)
+        }
+    }
+    
     @IBAction func clickVerifyBtn(_ sender: UIButton) {
         if clousre != nil {
-            clousre!(true)
+            clousre!(.verifyType)
+        }
+    }
+    
+    @IBAction func clickCancelBtn(_ sender: UIButton) {
+        if clousre != nil {
+            clousre!(.cancelType)
         }
     }
 }
